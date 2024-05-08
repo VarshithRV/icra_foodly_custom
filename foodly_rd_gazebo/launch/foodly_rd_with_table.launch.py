@@ -43,7 +43,7 @@ def generate_launch_description():
         get_package_share_directory('foodly_rd_gazebo'), 'gui', 'gui.config')
     # The controller will not start unless you start the simulation with the -r option.
     ign_gazebo = ExecuteProcess(
-            cmd=['ign gazebo -r', world_file, '--gui-config', gui_config],
+            cmd=['ign gazebo -r ', world_file, '--gui-config', gui_config],
             output='screen',
             additional_env=env,
             shell=True
