@@ -1,0 +1,31 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/barracuda/ros2_ws/install/turtlesim/include/**",
+        "/home/barracuda/ros2_ws/install/foodly_rd_examples/include/**",
+        "/home/barracuda/ros2_ws/install/foodly_rd_control/include/**",
+        "/home/barracuda/ros2_ws/install/examples_rclcpp_cbg_executor/include/**",
+        "/home/barracuda/icra_ws/install/nekonote_conveyor_control/include/**",
+        "/home/barracuda/icra_ws/install/foodly_rd_examples/include/**",
+        "/home/barracuda/icra_ws/install/foodly_rd_control/include/**",
+        "/opt/ros/humble/include/**",
+        "/home/barracuda/icra_ws/src/icra_foodly_custom/foodly_rd_control/include/**",
+        "/home/barracuda/icra_ws/src/icra_foodly_custom/foodly_rd_examples/include/**",
+        "/home/barracuda/icra_ws/src/icra_perception/include/**",
+        "/home/barracuda/icra_ws/src/nekonote_conveyor_control-sample-notworks/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

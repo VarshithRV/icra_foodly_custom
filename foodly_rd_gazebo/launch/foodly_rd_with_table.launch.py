@@ -38,7 +38,7 @@ def generate_launch_description():
            'IGN_GAZEBO_RESOURCE_PATH': os.path.dirname(
                get_package_share_directory('foodly_rd_description'))}
     world_file = os.path.join(
-        get_package_share_directory('foodly_rd_gazebo'), 'worlds', 'table.sdf')
+        get_package_share_directory('foodly_rd_gazebo'), 'worlds', 'icra_world.sdf')
     gui_config = os.path.join(
         get_package_share_directory('foodly_rd_gazebo'), 'gui', 'gui.config')
     # The controller will not start unless you start the simulation with the -r option.

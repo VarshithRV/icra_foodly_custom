@@ -30,12 +30,35 @@
       </uri>
     </include>
 
-    <include>
-      <uri>
-        https://fuel.gazebosim.org/1.0/OpenRobotics/models/Table
-      </uri>
-      <pose>0.47 0 -0.1 0 0 1.5708</pose>
-    </include>
+    <model name="table">
+      <link name="base_link">
+        <visual name="table_visual">
+          <geometry>
+            <mesh>
+              <uri>meshes/Foodly_Table.stl</uri>
+              <!-- <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Radio/4/files/meshes/Radio.dae</uri> -->
+              <!-- <uri>
+                https://fuel.gazebosim.org/1.0/OpenRobotics/models/Wood cube 5cm
+              </uri>         -->
+            </mesh>
+          </geometry>
+        </visual>
+        
+        <collision name="table_collision">
+          <geometry>
+            <mesh>
+              <uri>meshes/Foodly_Table.stl</uri>
+              <!-- <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Radio/4/files/meshes/Radio.dae</uri> -->
+              <!-- <uri>
+                https://fuel.gazebosim.org/1.0/OpenRobotics/models/Wood cube 5cm
+              </uri> -->
+            </mesh>
+          </geometry>
+        </collision>
+      </link>
+  
+      <pose>0.25 0 -0.1 0 0 0</pose>
+    </model>
 
     <include>
       <uri>
