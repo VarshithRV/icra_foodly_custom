@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="foodly_rd_center_ros2_control_settings">
+
+    <ros2_control name="foodly_rd_center" type="system">
+      <xacro:unless value="${USE_CENTER_MOCK_HARDWARE}">
+        <hardware>
+          <plugin>foodly_rd_hardware/FoodlyRDHardware</plugin>
+          <param name="port_name">${CENTER_PORT_NAME}</param>
+          <param name="baudrate">${CENTER_BAUDRATE}</param>
+          <param name="manipulator_config_file_path">${CENTER_MANIPULATOR_CONFIG_FILE_PATH}</param>
+          <param name="timeout_seconds">${TIMEOUT_SECONDS}</param>
+        </hardware>
+      </xacro:unless>
+
+      <xacro:if value="${USE_CENTER_MOCK_HARDWARE}">
+        <hardware>
+          <plugin>mock_components/GenericSystem</plugin>
+        </hardware>
+      </xacro:if>
+
+      <joint name="${NAME_JOINT_BODY}">
+        <command_interface name="position">
+          <param name="min">${JOINT_BODY_LOWER_LIMIT}</param>
+          <param name="max">${JOINT_BODY_UPPER_LIMIT}</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+        <param name="current_to_effort">3.60</param>
+      </joint>
+
+      <joint name="${NAME_JOINT_NECK_1}">
+        <command_interface name="position">
+          <param name="min">${JOINT_NECK_1_LOWER_LIMIT}"</param>
+          <param name="max">${JOINT_NECK_1_UPPER_LIMIT}"</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+        <param name="current_to_effort">2.20</param>
+      </joint>
+
+      <joint name="${NAME_JOINT_NECK_2}">
+        <command_interface name="position">
+          <param name="min">${JOINT_NECK_2_LOWER_LIMIT}"</param>
+          <param name="max">${JOINT_NECK_2_UPPER_LIMIT}"</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+        <param name="current_to_effort">2.20</param>
+      </joint>
+
+    </ros2_control>
+  </xacro:macro>
+</robot>

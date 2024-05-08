@@ -1,0 +1,16 @@
+joint_groups:
+  group:
+    joints:
+      - waist_yaw_joint
+      - neck_yaw_joint
+      - neck_pitch_joint
+    sync_read:
+      - position
+      - velocity
+      - current
+    sync_write:
+      - position
+
+waist_yaw_joint: { id: 18, dynamixel: "XM540", operating_mode: 3 }
+neck_yaw_joint: { id: 19, dynamixel: "XM430", operating_mode: 3 }
+neck_pitch_joint: { id: 20, dynamixel: "XM430", operating_mode: 3 }

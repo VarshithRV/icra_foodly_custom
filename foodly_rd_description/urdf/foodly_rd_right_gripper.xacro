@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="foodly_rd_right_gripper">
+
+    <link name="${NAME_LINK_ARM_R_7}">
+      <visual>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <geometry>
+          <mesh filename="${VISUAL_MESH_PATH}/R_Link7.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="${COLOR_LINK_GRIPPER}"/>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <geometry>
+          <mesh filename="${COLLISION_MESH_PATH}/R_Link7.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin rpy="0 0 0" xyz="3.692e-3 -21.51e-3 0.092e-3"/>
+        <inertia ixx="52364.995e-09" ixy="1121.064e-09" ixz="69.785e-09" iyy="59383.244e-09" iyz="-430.509e-09" izz="53024.883e-09"/>
+        <mass value="133.1e-3"/>
+      </inertial>
+    </link>
+
+    <joint name="${NAME_JOINT_GRIPPER_R_A}" type="revolute">
+      <parent link="${NAME_LINK_ARM_R_7}" />
+      <child link="${NAME_LINK_GRIPPER_R_A}" />
+      <origin xyz="0.0 -0.027 -0.012" rpy="0 0 0"/>
+      <limit 
+        lower="${JOINT_GRIPPER_R_LOWER_LIMIT}" 
+        upper="${JOINT_GRIPPER_R_UPPER_LIMIT}" 
+        effort="${EFFORT_LIMIT}" 
+        velocity="${VELOCITY_LIMIT}"/>
+      <axis xyz="1 0 0"/>
+    </joint>
+
+    <link name="${NAME_LINK_GRIPPER_R_A}">
+      <visual>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <geometry>
+          <mesh filename="${VISUAL_MESH_PATH}/R_GripperA.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="${COLOR_LINK_GRIPPER}"/>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <geometry>
+          <mesh filename="${COLLISION_MESH_PATH}/R_GripperA.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.766e-3 -17.78e-3 -5.76e-3"/>
+        <inertia ixx="6198.537e-09" ixy="-273.862e-09" ixz="-53.760e-09" iyy="9219.485e-09" iyz="-1204.183e-09" izz="13581.378e-09"/>
+        <mass value="22.2e-3"/>
+      </inertial>
+    </link>
+
+    <link name="${NAME_LINK_TONG_R_A}">
+      <visual>
+        <origin rpy="0 0 3.14" xyz="0.0 0.0 0.0"/>
+        <geometry>
+            <mesh filename="${VISUAL_MESH_PATH}/Tong.stl" />
+        </geometry>
+        <material name="${COLOR_LINK_GRIPPER}"/>
+      </visual>
+      <collision>
+        <origin rpy="0 0 3.14" xyz="0.0 0.0 0.0"/>
+        <geometry>
+          <mesh filename="${COLLISION_MESH_PATH}/Tong.stl" />
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="${NAME_JOINT_TONG_R_A}" type="fixed">
+      <parent link="${NAME_LINK_GRIPPER_R_A}" />
+      <child link="${NAME_LINK_TONG_R_A}" />
+      <origin xyz="0.0 -0.0281 -0.0105" rpy="-1.5708 0 0"/>
+    </joint>
+
+    <!--Dummy joint/link to prevent error with mimic joint
+    See https://github.com/ros-controls/gazebo_ros2_control/issues/173
+    -->
+    <joint name="${NAME_JOINT_GRIPPER_R_B}_mimic" type="fixed">
+      <parent link="base_link" />
+      <child link="dummy_mimic_fix_r" />
+    </joint>
+    <link name="dummy_mimic_fix_r"/>
+
+    <joint name="${NAME_JOINT_GRIPPER_R_B}" type="revolute">
+      <parent link="${NAME_LINK_ARM_R_7}" />
+      <child link="${NAME_LINK_GRIPPER_R_B}" />
+      <origin xyz="0.0 -0.027 0.012" rpy="0 0 0"/>
+      <limit 
+        lower="${JOINT_GRIPPER_R_LOWER_LIMIT}" 
+        upper="${JOINT_GRIPPER_R_UPPER_LIMIT}" 
+        effort="${EFFORT_LIMIT}" 
+        velocity="${VELOCITY_LIMIT}"/>
+      <axis xyz="-1 0 0"/>
+      <mimic joint="${NAME_JOINT_GRIPPER_R_A}" multiplier="1" offset="0"/>
+    </joint>
+
+    <link name="${NAME_LINK_GRIPPER_R_B}">
+      <visual>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <geometry>
+          <mesh filename="${VISUAL_MESH_PATH}/R_GripperB.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="${COLOR_LINK_GRIPPER}"/>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <geometry>
+          <mesh filename="${COLLISION_MESH_PATH}/R_GripperB.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.122e-3 -18.391e-3 6.172e-3"/>
+        <inertia ixx="5662.499e-09" ixy="-110.596e-09" ixz="46.542e-09" iyy="8142.951e-09" iyz="1170.002e-09" izz="12060.868e-09"/>
+        <mass value="21.5e-3"/>
+      </inertial>
+    </link>
+
+    <link name="${NAME_LINK_TONG_R_B}">
+      <visual>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <geometry>
+            <mesh filename="${VISUAL_MESH_PATH}/Tong.stl" />
+        </geometry>
+        <material name="${COLOR_LINK_GRIPPER}"/>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <geometry>
+          <mesh filename="${COLLISION_MESH_PATH}/Tong.stl" />
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="${NAME_JOINT_TONG_R_B}" type="fixed">
+      <parent link="${NAME_LINK_GRIPPER_R_B}" />
+      <child link="${NAME_LINK_TONG_R_B}" />
+      <origin xyz="0.0 -0.0281 0.0105" rpy="-1.5708 0 0"/>
+    </joint>
+
+  </xacro:macro>
+
+</robot>

@@ -1,0 +1,5 @@
+repositories:
+  ros2_control:
+    type: git
+    url: https://github.com/chama1176/ros2_control.git
+    version: hotfix/multi-hardware-components
