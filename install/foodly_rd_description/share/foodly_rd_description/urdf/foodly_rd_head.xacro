@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="foodly_rd_head">
+
+    <joint name="${NAME_JOINT_NECK_1}" type="revolute">
+      <parent link="${NAME_LINK_BODY}" />
+      <child link="${NAME_LINK_NECK_1}" />
+      <origin xyz="0.105 0.0 0.272" rpy="0 0 0"/>
+      <limit 
+        lower="${JOINT_NECK_1_LOWER_LIMIT}" 
+        upper="${JOINT_NECK_1_UPPER_LIMIT}" 
+        effort="${EFFORT_LIMIT}" 
+        velocity="${VELOCITY_LIMIT}"/>
+      <axis xyz="0 0 1"/>
+      <dynamics damping="1.0e-6" friction="0.8"/>
+    </joint>
+
+    <link name="${NAME_LINK_NECK_1}">
+      <visual>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.059"/>
+        <geometry>
+          <mesh filename="${VISUAL_MESH_PATH}/Neck1.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="${COLOR_LINK_HEAD}"/>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.059"/>
+        <geometry>
+          <mesh filename="${COLLISION_MESH_PATH}/Neck1.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.00076 0.000029 0.045271"/>
+        <inertia ixx="128309.880e-09" ixy="96.381e-09" ixz="1055.302e-09" iyy="145093.296e-09" iyz="36.239e-09" izz="65811.507e-09"/>
+        <mass value="0.169"/>
+      </inertial>
+    </link>
+
+    <joint name="${NAME_JOINT_NECK_2}" type="revolute">
+      <parent link="${NAME_LINK_NECK_1}" />
+      <child link="${NAME_LINK_NECK_2_1}" />
+      <origin xyz="0.0 0.0 0.059" rpy="0 0 0"/>
+      <limit 
+        lower="${JOINT_NECK_2_LOWER_LIMIT}" 
+        upper="${JOINT_NECK_2_UPPER_LIMIT}" 
+        effort="${EFFORT_LIMIT}" 
+        velocity="${VELOCITY_LIMIT}"/>
+      <axis xyz="0 1 0"/>
+      <dynamics damping="1.0e-6" friction="0.8"/>
+    </joint>
+
+    <link name="${NAME_LINK_NECK_2_1}">
+      <visual>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <geometry>
+          <mesh filename="${VISUAL_MESH_PATH}/Neck2_1.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="${COLOR_LINK_HEAD}"/>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <geometry>
+          <mesh filename="${COLLISION_MESH_PATH}/Neck2_1.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.008181 0.001757 0.071913"/>
+        <inertia ixx="1059846.427e-09" ixy="-4329.255e-09" ixz="-47782.904e-09" iyy="1204737.839e-09" iyz="22813.656e-09" izz="951831.715e-09"/>
+        <mass value="0.3242"/>
+      </inertial>
+    </link>
+
+    <joint name="{NAME_JOINT_HEAD_CAMERA2}" type="fixed">
+      <parent link="${NAME_LINK_NECK_2_1}" />
+      <child link="${NAME_LINK_NECK_2_2}" />
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${NAME_LINK_NECK_2_2}">
+      <visual>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <geometry>
+          <mesh filename="${VISUAL_MESH_PATH}/Neck2_2.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="${COLOR_LINK_NECK}"/>
+      </visual>
+    </link>
+
+    <joint name="{NAME_JOINT_HEAD_CAMERA3}" type="fixed">
+      <parent link="${NAME_LINK_NECK_2_1}" />
+      <child link="${NAME_LINK_D415}" />
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${NAME_LINK_D415}">
+      <visual>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <geometry>
+          <mesh filename="${VISUAL_MESH_PATH}/D415.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="${COLOR_LINK_D415}"/>
+      </visual>
+    </link>
+
+    <joint name="${NAME_JOINT_HEAD_CAMERA}" type="fixed">
+      <parent link="${NAME_LINK_NECK_2_1}" />
+      <child link="${NAME_LINK_HEAD_CAMERA}" />
+      <origin xyz="0.08195 0.020 0.094" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${NAME_LINK_HEAD_CAMERA}"/>
+
+  </xacro:macro>
+
+</robot>

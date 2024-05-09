@@ -1,0 +1,95 @@
+[0.006s] Invoking command in '/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_control': AMENT_PREFIX_PATH=/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description:/home/barracuda/icra_ws/install/nekonote_conveyor_control:/home/barracuda/icra_ws/install/icra_perception:/home/barracuda/icra_ws/install/foodly_rd:/home/barracuda/icra_ws/install/foodly_rd_vision:/home/barracuda/icra_ws/install/foodly_rd_tools:/home/barracuda/icra_ws/install/foodly_rd_examples:/home/barracuda/icra_ws/install/foodly_rd_moveit_config:/home/barracuda/icra_ws/install/foodly_rd_gazebo:/home/barracuda/icra_ws/install/foodly_rd_control:/home/barracuda/icra_ws/install/foodly_rd_description:/opt/ros/humble PYTHONPATH=/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/barracuda/icra_ws/src/icra_foodly_custom/foodly_rd_control -DCMAKE_INSTALL_PREFIX=/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control
+[0.038s] -- The C compiler identification is GNU 11.4.0
+[0.070s] -- The CXX compiler identification is GNU 11.4.0
+[0.074s] -- Detecting C compiler ABI info
+[0.114s] -- Detecting C compiler ABI info - done
+[0.118s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.118s] -- Detecting C compile features
+[0.118s] -- Detecting C compile features - done
+[0.120s] -- Detecting CXX compiler ABI info
+[0.167s] -- Detecting CXX compiler ABI info - done
+[0.173s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.173s] -- Detecting CXX compile features
+[0.173s] -- Detecting CXX compile features - done
+[0.175s] -- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.265s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.332s] -- Found hardware_interface: 2.40.0 (/opt/ros/humble/share/hardware_interface/cmake)
+[0.369s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.375s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.382s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.394s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.409s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.840s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.843s] -- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.869s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[0.899s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.902s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[0.912s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.917s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[0.922s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[0.928s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.937s] -- Looking for pthread.h
+[0.984s] -- Looking for pthread.h - found
+[0.984s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.026s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.027s] -- Found Threads: TRUE  
+[1.126s] -- Found rt_manipulators_cpp: 1.0.0 (/opt/ros/humble/share/rt_manipulators_cpp/cmake)
+[1.174s] -- Found ament_lint_auto: 0.12.10 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.225s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.225s] -- Configured cppcheck include dirs: /home/barracuda/icra_ws/src/icra_foodly_custom/foodly_rd_control/include
+[1.225s] -- Configured cppcheck exclude dirs and/or files: 
+[1.226s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[1.226s] -- Configured cpplint exclude dirs and/or files: 
+[1.226s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.227s] -- Added test 'lint_cmake' to check CMake code style
+[1.227s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.228s] -- Added test 'uncrustify' to check C / C++ code style
+[1.228s] -- Configured uncrustify additional arguments: 
+[1.228s] -- Added test 'xmllint' to check XML markup files
+[1.230s] -- Configuring done
+[1.252s] -- Generating done
+[1.253s] -- Build files have been written to: /home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_control
+[1.262s] Invoked command in '/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_control' returned '0': AMENT_PREFIX_PATH=/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description:/home/barracuda/icra_ws/install/nekonote_conveyor_control:/home/barracuda/icra_ws/install/icra_perception:/home/barracuda/icra_ws/install/foodly_rd:/home/barracuda/icra_ws/install/foodly_rd_vision:/home/barracuda/icra_ws/install/foodly_rd_tools:/home/barracuda/icra_ws/install/foodly_rd_examples:/home/barracuda/icra_ws/install/foodly_rd_moveit_config:/home/barracuda/icra_ws/install/foodly_rd_gazebo:/home/barracuda/icra_ws/install/foodly_rd_control:/home/barracuda/icra_ws/install/foodly_rd_description:/opt/ros/humble PYTHONPATH=/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/barracuda/icra_ws/src/icra_foodly_custom/foodly_rd_control -DCMAKE_INSTALL_PREFIX=/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control
+[1.263s] Invoking command in '/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_control': AMENT_PREFIX_PATH=/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description:/home/barracuda/icra_ws/install/nekonote_conveyor_control:/home/barracuda/icra_ws/install/icra_perception:/home/barracuda/icra_ws/install/foodly_rd:/home/barracuda/icra_ws/install/foodly_rd_vision:/home/barracuda/icra_ws/install/foodly_rd_tools:/home/barracuda/icra_ws/install/foodly_rd_examples:/home/barracuda/icra_ws/install/foodly_rd_moveit_config:/home/barracuda/icra_ws/install/foodly_rd_gazebo:/home/barracuda/icra_ws/install/foodly_rd_control:/home/barracuda/icra_ws/install/foodly_rd_description:/opt/ros/humble PYTHONPATH=/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_control -- -j12 -l12
+[1.291s] [ 50%] [32mBuilding CXX object CMakeFiles/foodly_rd_hardware.dir/src/foodly_rd_hardware.cpp.o[0m
+[3.316s] [100%] [32m[1mLinking CXX shared library libfoodly_rd_hardware.so[0m
+[3.432s] [100%] Built target foodly_rd_hardware
+[3.440s] Invoked command in '/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_control' returned '0': AMENT_PREFIX_PATH=/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description:/home/barracuda/icra_ws/install/nekonote_conveyor_control:/home/barracuda/icra_ws/install/icra_perception:/home/barracuda/icra_ws/install/foodly_rd:/home/barracuda/icra_ws/install/foodly_rd_vision:/home/barracuda/icra_ws/install/foodly_rd_tools:/home/barracuda/icra_ws/install/foodly_rd_examples:/home/barracuda/icra_ws/install/foodly_rd_moveit_config:/home/barracuda/icra_ws/install/foodly_rd_gazebo:/home/barracuda/icra_ws/install/foodly_rd_control:/home/barracuda/icra_ws/install/foodly_rd_description:/opt/ros/humble PYTHONPATH=/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_control -- -j12 -l12
+[3.454s] Invoking command in '/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_control': AMENT_PREFIX_PATH=/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description:/home/barracuda/icra_ws/install/nekonote_conveyor_control:/home/barracuda/icra_ws/install/icra_perception:/home/barracuda/icra_ws/install/foodly_rd:/home/barracuda/icra_ws/install/foodly_rd_vision:/home/barracuda/icra_ws/install/foodly_rd_tools:/home/barracuda/icra_ws/install/foodly_rd_examples:/home/barracuda/icra_ws/install/foodly_rd_moveit_config:/home/barracuda/icra_ws/install/foodly_rd_gazebo:/home/barracuda/icra_ws/install/foodly_rd_control:/home/barracuda/icra_ws/install/foodly_rd_description:/opt/ros/humble PYTHONPATH=/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_control
+[3.459s] -- Install configuration: ""
+[3.459s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/share/foodly_rd_control/foodly_rd_hardware.xml
+[3.459s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/lib/libfoodly_rd_hardware.so
+[3.460s] -- Set runtime path of "/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/lib/libfoodly_rd_hardware.so" to ""
+[3.460s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/include
+[3.460s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/include/foodly_rd_control
+[3.460s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/include/foodly_rd_control/foodly_rd_hardware.hpp
+[3.460s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/include/foodly_rd_control/visibility_control.h
+[3.460s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/share/foodly_rd_control//launch
+[3.460s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/share/foodly_rd_control//launch/foodly_rd_control.launch.py
+[3.460s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/share/foodly_rd_control//config
+[3.460s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/share/foodly_rd_control//config/foodly_rd_controllers.yaml
+[3.460s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/share/foodly_rd_control//config/left_manipulator_config.yaml
+[3.461s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/share/foodly_rd_control//config/right_manipulator_config.yaml
+[3.461s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/share/foodly_rd_control//config/center_manipulator_config.yaml
+[3.461s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/share/foodly_rd_control/environment/library_path.sh
+[3.461s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/share/foodly_rd_control/environment/library_path.dsv
+[3.461s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/share/ament_index/resource_index/package_run_dependencies/foodly_rd_control
+[3.461s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/share/ament_index/resource_index/parent_prefix_path/foodly_rd_control
+[3.461s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/share/foodly_rd_control/environment/ament_prefix_path.sh
+[3.461s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/share/foodly_rd_control/environment/ament_prefix_path.dsv
+[3.461s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/share/foodly_rd_control/environment/path.sh
+[3.461s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/share/foodly_rd_control/environment/path.dsv
+[3.461s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/share/foodly_rd_control/local_setup.bash
+[3.461s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/share/foodly_rd_control/local_setup.sh
+[3.461s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/share/foodly_rd_control/local_setup.zsh
+[3.461s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/share/foodly_rd_control/local_setup.dsv
+[3.461s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/share/foodly_rd_control/package.dsv
+[3.461s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/share/ament_index/resource_index/packages/foodly_rd_control
+[3.461s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/share/ament_index/resource_index/hardware_interface__pluginlib__plugin/foodly_rd_control
+[3.461s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/share/foodly_rd_control/cmake/ament_cmake_export_include_directories-extras.cmake
+[3.461s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/share/foodly_rd_control/cmake/ament_cmake_export_libraries-extras.cmake
+[3.461s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/share/foodly_rd_control/cmake/ament_cmake_export_dependencies-extras.cmake
+[3.461s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/share/foodly_rd_control/cmake/foodly_rd_controlConfig.cmake
+[3.461s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/share/foodly_rd_control/cmake/foodly_rd_controlConfig-version.cmake
+[3.461s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_control/share/foodly_rd_control/package.xml
+[3.463s] Invoked command in '/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_control' returned '0': AMENT_PREFIX_PATH=/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description:/home/barracuda/icra_ws/install/nekonote_conveyor_control:/home/barracuda/icra_ws/install/icra_perception:/home/barracuda/icra_ws/install/foodly_rd:/home/barracuda/icra_ws/install/foodly_rd_vision:/home/barracuda/icra_ws/install/foodly_rd_tools:/home/barracuda/icra_ws/install/foodly_rd_examples:/home/barracuda/icra_ws/install/foodly_rd_moveit_config:/home/barracuda/icra_ws/install/foodly_rd_gazebo:/home/barracuda/icra_ws/install/foodly_rd_control:/home/barracuda/icra_ws/install/foodly_rd_description:/opt/ros/humble PYTHONPATH=/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_control

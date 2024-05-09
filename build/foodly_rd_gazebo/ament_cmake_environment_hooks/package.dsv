@@ -1,0 +1,4 @@
+source;share/foodly_rd_gazebo/local_setup.bash
+source;share/foodly_rd_gazebo/local_setup.dsv
+source;share/foodly_rd_gazebo/local_setup.sh
+source;share/foodly_rd_gazebo/local_setup.zsh

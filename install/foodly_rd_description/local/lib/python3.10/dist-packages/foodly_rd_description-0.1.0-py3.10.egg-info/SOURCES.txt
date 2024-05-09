@@ -1,0 +1,7 @@
+setup.py
+foodly_rd_description/__init__.py
+foodly_rd_description/robot_description_loader.py
+foodly_rd_description.egg-info/PKG-INFO
+foodly_rd_description.egg-info/SOURCES.txt
+foodly_rd_description.egg-info/dependency_links.txt
+foodly_rd_description.egg-info/top_level.txt

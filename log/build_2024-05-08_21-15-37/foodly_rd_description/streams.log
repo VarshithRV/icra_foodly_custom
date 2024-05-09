@@ -1,0 +1,156 @@
+[0.013s] Invoking command in '/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/barracuda/icra_ws/src/icra_foodly_custom/foodly_rd_description -DCMAKE_INSTALL_PREFIX=/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description
+[0.080s] -- The C compiler identification is GNU 11.4.0
+[0.140s] -- The CXX compiler identification is GNU 11.4.0
+[0.147s] -- Detecting C compiler ABI info
+[0.191s] -- Detecting C compiler ABI info - done
+[0.196s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.196s] -- Detecting C compile features
+[0.196s] -- Detecting C compile features - done
+[0.198s] -- Detecting CXX compiler ABI info
+[0.249s] -- Detecting CXX compiler ABI info - done
+[0.254s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.254s] -- Detecting CXX compile features
+[0.254s] -- Detecting CXX compile features - done
+[0.256s] -- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.357s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.499s] -- Found ament_lint_auto: 0.12.10 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.750s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.751s] -- Added test 'lint_cmake' to check CMake code style
+[0.751s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.753s] -- Added test 'xmllint' to check XML markup files
+[0.754s] -- Configuring done
+[0.755s] -- Generating done
+[0.756s] -- Build files have been written to: /home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_description
+[0.759s] Invoked command in '/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/barracuda/icra_ws/src/icra_foodly_custom/foodly_rd_description -DCMAKE_INSTALL_PREFIX=/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description
+[0.760s] Invoking command in '/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_description -- -j12 -l12
+[0.790s] Built target ament_cmake_python_copy_foodly_rd_description
+[0.921s] running egg_info
+[0.921s] creating foodly_rd_description.egg-info
+[0.921s] writing foodly_rd_description.egg-info/PKG-INFO
+[0.922s] writing dependency_links to foodly_rd_description.egg-info/dependency_links.txt
+[0.922s] writing top-level names to foodly_rd_description.egg-info/top_level.txt
+[0.922s] writing manifest file 'foodly_rd_description.egg-info/SOURCES.txt'
+[0.923s] reading manifest file 'foodly_rd_description.egg-info/SOURCES.txt'
+[0.923s] writing manifest file 'foodly_rd_description.egg-info/SOURCES.txt'
+[0.939s] Built target ament_cmake_python_build_foodly_rd_description_egg
+[0.946s] Invoked command in '/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_description -- -j12 -l12
+[0.960s] Invoking command in '/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_description
+[0.964s] -- Install configuration: ""
+[0.964s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//launch
+[0.964s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//launch/display.rviz
+[0.964s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//launch/display.launch.py
+[0.964s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes
+[0.964s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/collision
+[0.964s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/collision/R_Link3.stl
+[0.964s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/collision/Logo_Corp.stl
+[0.965s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/collision/Logo_Rabbit.stl
+[0.965s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/collision/R_Link2.stl
+[0.966s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/collision/L_Link6.stl
+[0.966s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/collision/Tong.stl
+[0.966s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/collision/Neck2_2.stl
+[0.968s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/collision/L_GripperA.stl
+[0.968s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/collision/R_GripperA.stl
+[0.969s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/collision/R_Link1.stl
+[0.969s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/collision/Body.stl
+[0.969s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/collision/R_Link7.stl
+[0.969s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/collision/L_Link4.stl
+[0.970s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/collision/L_Link2.stl
+[0.970s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/collision/R_Link5.stl
+[0.970s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/collision/Base.stl
+[0.971s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/collision/R_Link6.stl
+[0.971s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/collision/R_Link4.stl
+[0.971s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/collision/L_Link5.stl
+[0.971s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/collision/L_Link7.stl
+[0.971s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/collision/R_GripperB.stl
+[0.972s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/collision/L_Link1.stl
+[0.972s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/collision/L_GripperB.stl
+[0.972s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/collision/L_Link3.stl
+[0.972s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/collision/Neck1.stl
+[0.972s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/collision/Neck2_1.stl
+[0.973s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/collision/D415.stl
+[0.975s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual
+[0.975s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/R_Link3.stl
+[0.976s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/Logo_Corp.stl
+[0.976s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/LowerbodyE1.stl
+[0.977s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/Logo_Rabbit.stl
+[0.977s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/LowerbodyF.stl
+[0.978s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/LowerbodyGp.stl
+[0.978s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/R_Link2.stl
+[0.980s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/LowerbodyE2.stl
+[0.981s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/L_Link6.stl
+[0.982s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/Tong.stl
+[0.983s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/LowerbodyC.stl
+[0.983s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/Neck2_2.stl
+[0.985s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/L_GripperA.stl
+[0.986s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/R_GripperA.stl
+[0.987s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/R_Link1.stl
+[0.988s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/Body.stl
+[0.994s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/R_Link7.stl
+[0.995s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/L_Link4.stl
+[1.000s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/L_Link2.stl
+[1.001s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/LowerbodyB.stl
+[1.004s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/R_Link5.stl
+[1.006s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/LowerbodyGy.stl
+[1.006s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/Base.stl
+[1.007s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/R_Link6.stl
+[1.009s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/PushCar.stl
+[1.011s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/R_Link4.stl
+[1.014s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/L_Link5.stl
+[1.016s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/L_Link7.stl
+[1.017s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/R_GripperB.stl
+[1.017s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/LowerbodyA.stl
+[1.018s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/LowerbodyGe.stl
+[1.019s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/L_Link1.stl
+[1.020s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/LowerbodyD.stl
+[1.021s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/L_GripperB.stl
+[1.021s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/L_Link3.stl
+[1.023s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/Neck1.stl
+[1.024s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/Neck2_1.stl
+[1.030s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/D415.stl
+[1.032s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/PushCar2021.stl
+[1.038s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/LowerbodyGg.stl
+[1.038s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//meshes/visual/LowerbodyGr.stl
+[1.038s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//urdf
+[1.038s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//urdf/foodly_rd_left.ros2_control.xacro
+[1.039s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//urdf/foodly_rd_right_gripper.xacro
+[1.039s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//urdf/foodly_rd_gazebo.xacro
+[1.039s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//urdf/foodly_rd_push_car.xacro
+[1.039s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//urdf/foodly_rd_left_arm.xacro
+[1.039s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//urdf/foodly_rd.urdf.xacro
+[1.039s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//urdf/foodly_rd_head.xacro
+[1.039s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//urdf/foodly_rd_center.ros2_control.xacro
+[1.039s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//urdf/foodly_rd_left_gripper.xacro
+[1.039s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//urdf/foodly_rd_right_arm.xacro
+[1.039s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//urdf/foodly_rd_right.ros2_control.xacro
+[1.039s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//urdf/foodly_rd_body.xacro
+[1.039s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description//urdf/foodly_rd.gazebo_ros2_control.xacro
+[1.039s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description/environment/pythonpath.sh
+[1.039s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description/environment/pythonpath.dsv
+[1.039s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/local/lib/python3.10/dist-packages/foodly_rd_description-0.1.0-py3.10.egg-info
+[1.039s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/local/lib/python3.10/dist-packages/foodly_rd_description-0.1.0-py3.10.egg-info/dependency_links.txt
+[1.039s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/local/lib/python3.10/dist-packages/foodly_rd_description-0.1.0-py3.10.egg-info/SOURCES.txt
+[1.040s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/local/lib/python3.10/dist-packages/foodly_rd_description-0.1.0-py3.10.egg-info/PKG-INFO
+[1.040s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/local/lib/python3.10/dist-packages/foodly_rd_description-0.1.0-py3.10.egg-info/top_level.txt
+[1.040s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/local/lib/python3.10/dist-packages/foodly_rd_description
+[1.040s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/local/lib/python3.10/dist-packages/foodly_rd_description/robot_description_loader.py
+[1.040s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/local/lib/python3.10/dist-packages/foodly_rd_description/__init__.py
+[1.059s] Listing '/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/local/lib/python3.10/dist-packages/foodly_rd_description'...
+[1.059s] Compiling '/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/local/lib/python3.10/dist-packages/foodly_rd_description/__init__.py'...
+[1.059s] Compiling '/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/local/lib/python3.10/dist-packages/foodly_rd_description/robot_description_loader.py'...
+[1.061s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/lib/foodly_rd_description/robot_description_loader.py
+[1.061s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/ament_index/resource_index/package_run_dependencies/foodly_rd_description
+[1.061s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/ament_index/resource_index/parent_prefix_path/foodly_rd_description
+[1.061s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description/environment/ament_prefix_path.sh
+[1.062s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description/environment/ament_prefix_path.dsv
+[1.062s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description/environment/path.sh
+[1.062s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description/environment/path.dsv
+[1.062s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description/local_setup.bash
+[1.062s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description/local_setup.sh
+[1.062s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description/local_setup.zsh
+[1.062s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description/local_setup.dsv
+[1.062s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description/package.dsv
+[1.062s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/ament_index/resource_index/packages/foodly_rd_description
+[1.062s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description/cmake/foodly_rd_descriptionConfig.cmake
+[1.062s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description/cmake/foodly_rd_descriptionConfig-version.cmake
+[1.062s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_description/share/foodly_rd_description/package.xml
+[1.064s] Invoked command in '/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_description

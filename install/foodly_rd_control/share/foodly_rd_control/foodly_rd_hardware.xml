@@ -1,0 +1,9 @@
+<library path="foodly_rd_hardware">
+  <class name="foodly_rd_hardware/FoodlyRDHardware"
+         type="foodly_rd_control::FoodlyRDHardware"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      A hardware plugin for the ros2_control.
+    </description>
+  </class>
+</library>

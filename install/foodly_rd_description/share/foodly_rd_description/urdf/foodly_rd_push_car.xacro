@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="foodly_rd_push_car">
+    <link name="${NAME_LINK_PUSH_CAR}">
+      <visual>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <geometry>
+          <mesh filename="${VISUAL_MESH_PATH}/PushCar2021.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="metal">
+          <color rgba="0.867 0.879 0.875 1"/>
+        </material>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="-0.155 0.0 -0.455"/>
+        <geometry>
+          <box size="0.45 0.39 0.90"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin rpy="0 0 0" xyz="-0.3 0.0 -0.7"/>
+        <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyx="0.0" iyy="1.0" iyz="0.0" izx="0.0" izy="0.0" izz="1.0"/>
+        <mass value="15.0"/>
+      </inertial>
+    </link>
+    <joint name="${NAME_JOINT_PUSH_CAR}" type="fixed">
+      <parent link="${NAME_LINK_BASE}" />
+      <child link="${NAME_LINK_PUSH_CAR}" />
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    </joint>
+
+  </xacro:macro>
+
+</robot>

@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="foodly_rd_left_ros2_control_settings">
+
+    <ros2_control name="foodly_rd_left" type="system">
+      <xacro:unless value="${USE_LEFT_MOCK_HARDWARE}">
+        <hardware>
+          <plugin>foodly_rd_hardware/FoodlyRDHardware</plugin>
+          <param name="port_name">${LEFT_PORT_NAME}</param>
+          <param name="baudrate">${LEFT_BAUDRATE}</param>
+          <param name="manipulator_config_file_path">${LEFT_MANIPULATOR_CONFIG_FILE_PATH}</param>
+          <param name="timeout_seconds">${TIMEOUT_SECONDS}</param>
+        </hardware>
+      </xacro:unless>
+
+      <xacro:if value="${USE_LEFT_MOCK_HARDWARE}">
+        <hardware>
+          <plugin>mock_components/GenericSystem</plugin>
+        </hardware>
+      </xacro:if>
+
+      <joint name="${NAME_JOINT_ARM_L_1}">
+        <command_interface name="position">
+          <param name="min">${JOINT_ARM_L_1_LOWER_LIMIT}"</param>
+          <param name="max">${JOINT_ARM_L_1_UPPER_LIMIT}"</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+        <param name="current_to_effort">3.60</param>
+      </joint>
+
+      <joint name="${NAME_JOINT_ARM_L_2}">
+        <command_interface name="position">
+          <param name="min">${JOINT_ARM_L_2_LOWER_LIMIT}"</param>
+          <param name="max">${JOINT_ARM_L_2_UPPER_LIMIT}"</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+        <param name="current_to_effort">3.60</param>
+      </joint>
+
+      <joint name="${NAME_JOINT_ARM_L_3}">
+        <command_interface name="position">
+          <param name="min">${JOINT_ARM_L_3_LOWER_LIMIT}"</param>
+          <param name="max">${JOINT_ARM_L_3_UPPER_LIMIT}"</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+        <param name="current_to_effort">2.20</param>
+      </joint>
+
+      <joint name="${NAME_JOINT_ARM_L_4}">
+        <command_interface name="position">
+          <param name="min">${JOINT_ARM_L_4_LOWER_LIMIT}"</param>
+          <param name="max">${JOINT_ARM_L_4_UPPER_LIMIT}"</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+        <param name="current_to_effort">2.00</param>
+      </joint>
+
+      <joint name="${NAME_JOINT_ARM_L_5}">
+        <command_interface name="position">
+          <param name="min">${JOINT_ARM_L_5_LOWER_LIMIT}"</param>
+          <param name="max">${JOINT_ARM_L_5_UPPER_LIMIT}"</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+        <param name="current_to_effort">2.20</param>
+      </joint>
+
+      <joint name="${NAME_JOINT_ARM_L_6}">
+        <command_interface name="position">
+          <param name="min">${JOINT_ARM_L_6_LOWER_LIMIT}"</param>
+          <param name="max">${JOINT_ARM_L_6_UPPER_LIMIT}"</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+        <param name="current_to_effort">2.20</param>
+      </joint>
+
+      <joint name="${NAME_JOINT_ARM_L_7}">
+        <command_interface name="position">
+          <param name="min">${JOINT_ARM_L_7_LOWER_LIMIT}"</param>
+          <param name="max">${JOINT_ARM_L_7_UPPER_LIMIT}"</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+        <param name="current_to_effort">2.20</param>
+      </joint>
+
+      <joint name="${NAME_JOINT_GRIPPER_L_A}">
+        <command_interface name="position">
+          <param name="min">${JOINT_GRIPPER_L_LOWER_LIMIT}"</param>
+          <param name="max">${JOINT_GRIPPER_L_UPPER_LIMIT}"</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+        <param name="current_to_effort">2.20</param>
+      </joint>
+
+    </ros2_control>
+  </xacro:macro>
+</robot>

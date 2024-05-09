@@ -1,0 +1,47 @@
+[0.010s] Invoking command in '/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_vision': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/barracuda/icra_ws/src/icra_foodly_custom/foodly_rd_vision -DCMAKE_INSTALL_PREFIX=/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision
+[0.074s] -- The C compiler identification is GNU 11.4.0
+[0.134s] -- The CXX compiler identification is GNU 11.4.0
+[0.141s] -- Detecting C compiler ABI info
+[0.186s] -- Detecting C compiler ABI info - done
+[0.193s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.193s] -- Detecting C compile features
+[0.193s] -- Detecting C compile features - done
+[0.196s] -- Detecting CXX compiler ABI info
+[0.244s] -- Detecting CXX compiler ABI info - done
+[0.249s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.249s] -- Detecting CXX compile features
+[0.250s] -- Detecting CXX compile features - done
+[0.252s] -- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.351s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.430s] -- Found ament_lint_auto: 0.12.10 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.490s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.490s] -- Added test 'lint_cmake' to check CMake code style
+[0.491s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.491s] -- Added test 'xmllint' to check XML markup files
+[0.492s] -- Configuring done
+[0.494s] -- Generating done
+[0.495s] -- Build files have been written to: /home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_vision
+[0.501s] Invoked command in '/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_vision' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/barracuda/icra_ws/src/icra_foodly_custom/foodly_rd_vision -DCMAKE_INSTALL_PREFIX=/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision
+[0.502s] Invoking command in '/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_vision': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_vision -- -j12 -l12
+[0.525s] Invoked command in '/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_vision' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_vision -- -j12 -l12
+[0.541s] Invoking command in '/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_vision': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_vision
+[0.548s] -- Install configuration: ""
+[0.549s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/foodly_rd_vision//launch
+[0.549s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/foodly_rd_vision//launch/head_camera.launch.py
+[0.549s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/foodly_rd_vision//launch/chest_camera.launch.py
+[0.549s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/ament_index/resource_index/package_run_dependencies/foodly_rd_vision
+[0.549s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/ament_index/resource_index/parent_prefix_path/foodly_rd_vision
+[0.549s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/foodly_rd_vision/environment/ament_prefix_path.sh
+[0.549s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/foodly_rd_vision/environment/ament_prefix_path.dsv
+[0.549s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/foodly_rd_vision/environment/path.sh
+[0.549s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/foodly_rd_vision/environment/path.dsv
+[0.549s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/foodly_rd_vision/local_setup.bash
+[0.549s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/foodly_rd_vision/local_setup.sh
+[0.550s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/foodly_rd_vision/local_setup.zsh
+[0.550s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/foodly_rd_vision/local_setup.dsv
+[0.550s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/foodly_rd_vision/package.dsv
+[0.550s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/ament_index/resource_index/packages/foodly_rd_vision
+[0.550s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/foodly_rd_vision/cmake/foodly_rd_visionConfig.cmake
+[0.550s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/foodly_rd_vision/cmake/foodly_rd_visionConfig-version.cmake
+[0.550s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/foodly_rd_vision/package.xml
+[0.555s] Invoked command in '/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_vision' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_vision

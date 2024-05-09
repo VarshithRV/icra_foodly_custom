@@ -1,0 +1,56 @@
+[0.011s] Invoking command in '/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/barracuda/icra_ws/src/icra_foodly_custom/foodly_rd_gazebo -DCMAKE_INSTALL_PREFIX=/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_gazebo
+[0.077s] -- The C compiler identification is GNU 11.4.0
+[0.136s] -- The CXX compiler identification is GNU 11.4.0
+[0.143s] -- Detecting C compiler ABI info
+[0.187s] -- Detecting C compiler ABI info - done
+[0.192s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.192s] -- Detecting C compile features
+[0.192s] -- Detecting C compile features - done
+[0.195s] -- Detecting CXX compiler ABI info
+[0.245s] -- Detecting CXX compiler ABI info - done
+[0.250s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.250s] -- Detecting CXX compile features
+[0.250s] -- Detecting CXX compile features - done
+[0.253s] -- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.354s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.432s] -- Found ament_lint_auto: 0.12.10 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.494s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.495s] -- Added test 'lint_cmake' to check CMake code style
+[0.495s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.496s] -- Added test 'xmllint' to check XML markup files
+[0.498s] -- Configuring done
+[0.501s] -- Generating done
+[0.504s] -- Build files have been written to: /home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_gazebo
+[0.506s] Invoked command in '/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/barracuda/icra_ws/src/icra_foodly_custom/foodly_rd_gazebo -DCMAKE_INSTALL_PREFIX=/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_gazebo
+[0.507s] Invoking command in '/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_gazebo -- -j12 -l12
+[0.541s] Invoked command in '/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_gazebo -- -j12 -l12
+[0.561s] Invoking command in '/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_gazebo
+[0.565s] -- Install configuration: ""
+[0.565s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_gazebo/share/foodly_rd_gazebo//config
+[0.565s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_gazebo/share/foodly_rd_gazebo//config/bridge.yaml
+[0.565s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_gazebo/share/foodly_rd_gazebo//launch
+[0.565s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_gazebo/share/foodly_rd_gazebo//launch/foodly_rd_with_table.launch.py
+[0.565s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_gazebo/share/foodly_rd_gazebo//worlds
+[0.565s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_gazebo/share/foodly_rd_gazebo//worlds/meshes
+[0.565s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_gazebo/share/foodly_rd_gazebo//worlds/meshes/Bowl.stl
+[0.566s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_gazebo/share/foodly_rd_gazebo//worlds/meshes/Bowl.stl.bak
+[0.566s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_gazebo/share/foodly_rd_gazebo//worlds/meshes/Foodly_Table.stl
+[0.566s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_gazebo/share/foodly_rd_gazebo//worlds/icra_world.sdf
+[0.566s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_gazebo/share/foodly_rd_gazebo//gui
+[0.566s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_gazebo/share/foodly_rd_gazebo//gui/gui.config
+[0.567s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_gazebo/share/ament_index/resource_index/package_run_dependencies/foodly_rd_gazebo
+[0.567s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_gazebo/share/ament_index/resource_index/parent_prefix_path/foodly_rd_gazebo
+[0.567s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_gazebo/share/foodly_rd_gazebo/environment/ament_prefix_path.sh
+[0.567s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_gazebo/share/foodly_rd_gazebo/environment/ament_prefix_path.dsv
+[0.567s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_gazebo/share/foodly_rd_gazebo/environment/path.sh
+[0.567s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_gazebo/share/foodly_rd_gazebo/environment/path.dsv
+[0.567s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_gazebo/share/foodly_rd_gazebo/local_setup.bash
+[0.567s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_gazebo/share/foodly_rd_gazebo/local_setup.sh
+[0.567s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_gazebo/share/foodly_rd_gazebo/local_setup.zsh
+[0.567s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_gazebo/share/foodly_rd_gazebo/local_setup.dsv
+[0.567s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_gazebo/share/foodly_rd_gazebo/package.dsv
+[0.568s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_gazebo/share/ament_index/resource_index/packages/foodly_rd_gazebo
+[0.568s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_gazebo/share/foodly_rd_gazebo/cmake/foodly_rd_gazeboConfig.cmake
+[0.568s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_gazebo/share/foodly_rd_gazebo/cmake/foodly_rd_gazeboConfig-version.cmake
+[0.568s] -- Installing: /home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_gazebo/share/foodly_rd_gazebo/package.xml
+[0.569s] Invoked command in '/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd_gazebo

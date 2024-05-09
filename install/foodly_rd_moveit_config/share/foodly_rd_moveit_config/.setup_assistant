@@ -1,0 +1,10 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: foodly_rd_description
+    relative_path: urdf/foodly_rd.urdf.xacro
+  srdf:
+    relative_path: config/foodly_rd.srdf
+  package_settings:
+    author_name: RT Corporation
+    author_email: shop@rt-net.jp
+    generated_timestamp: 1707790394

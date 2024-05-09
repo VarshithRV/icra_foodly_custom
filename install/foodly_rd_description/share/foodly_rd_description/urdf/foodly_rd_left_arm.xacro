@@ -1,0 +1,248 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="foodly_rd_left_arm">
+
+    <joint name="${NAME_JOINT_ARM_L_1}" type="revolute">
+      <parent link="${NAME_LINK_BODY}" />
+      <child link="${NAME_LINK_ARM_L_1}" />
+      <origin xyz="0.095 0.094 0.2085" rpy="0 0 0"/>
+      <limit 
+        lower="${JOINT_ARM_L_1_LOWER_LIMIT}" 
+        upper="${JOINT_ARM_L_1_UPPER_LIMIT}" 
+        effort="${EFFORT_LIMIT}" 
+        velocity="${VELOCITY_LIMIT}"/>
+      <axis xyz="0 1 0"/>
+      <dynamics damping="1.0e-6" friction="0.8"/>
+    </joint>
+
+    <link name="${NAME_LINK_ARM_L_1}">
+      <visual>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <geometry>
+          <mesh filename="${VISUAL_MESH_PATH}/L_Link1.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="${COLOR_LINK_ARM}"/>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <geometry>
+          <mesh filename="${COLLISION_MESH_PATH}/L_Link1.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin rpy="0 0 0" xyz="-0.000302 0.040944 0.002397"/>
+        <inertia ixx="403896.377e-09" ixy="1160.115e-09" ixz="89.603e-09" iyy="146138.343e-09" iyz="6874.621e-09" izz="390965.665e-09"/>
+        <mass value="0.3631"/>
+      </inertial>
+    </link>
+
+    <joint name="${NAME_JOINT_ARM_L_2}" type="revolute">
+      <parent link="${NAME_LINK_ARM_L_1}" />
+      <child link="${NAME_LINK_ARM_L_2}" />
+      <origin xyz="0.0 0.064 0.0" rpy="0 0 0"/>
+      <limit 
+        lower="${JOINT_ARM_L_2_LOWER_LIMIT}" 
+        upper="${JOINT_ARM_L_2_UPPER_LIMIT}" 
+        effort="${EFFORT_LIMIT}" 
+        velocity="${VELOCITY_LIMIT}"/>
+      <axis xyz="-1 0 0"/>
+      <dynamics damping="1.0e-6" friction="0.8"/>
+    </joint>
+
+    <link name="${NAME_LINK_ARM_L_2}">
+      <visual>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <geometry>
+          <mesh filename="${VISUAL_MESH_PATH}/L_Link2.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="${COLOR_LINK_ARM}"/>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <geometry>
+          <mesh filename="${COLLISION_MESH_PATH}/L_Link2.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin rpy="0 0 0" xyz="-0.003232 0.022641 -0.000024"/>
+        <inertia ixx="163956.443e-09" ixy="-7586.611e-09" ixz="9.109e-09" iyy="137173.768e-09" iyz="-219.611e-09" izz="228609.696e-09"/>
+        <mass value="0.1747"/>
+      </inertial>
+    </link>
+
+    <joint name="${NAME_JOINT_ARM_L_3}" type="revolute">
+      <parent link="${NAME_LINK_ARM_L_2}" />
+      <child link="${NAME_LINK_ARM_L_3}" />
+      <origin xyz="0.0 0.065 0.0" rpy="0 0 0"/>
+      <limit 
+        lower="${JOINT_ARM_L_3_LOWER_LIMIT}"
+        upper="${JOINT_ARM_L_3_UPPER_LIMIT}" 
+        effort="${EFFORT_LIMIT}" 
+        velocity="${VELOCITY_LIMIT}"/>
+      <axis xyz="0 1 0"/>
+      <dynamics damping="1.0e-6" friction="0.8"/>
+    </joint>
+
+    <link name="${NAME_LINK_ARM_L_3}">
+      <visual>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <geometry>
+          <mesh filename="${VISUAL_MESH_PATH}/L_Link3.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="${COLOR_LINK_ARM}"/>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <geometry>
+          <mesh filename="${COLLISION_MESH_PATH}/L_Link3.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin rpy="0 0 0" xyz="-0.009823 0.115329 -0.001582"/>
+        <inertia ixx="3494557.812e-09" ixy="-38050.033e-09" ixz="4860.533e-09" iyy="365982.084e-09" iyz="59244.882e-09" izz="3608668.228e-09"/>
+        <mass value="0.5718"/>
+      </inertial>
+    </link>
+
+    <joint name="${NAME_JOINT_ARM_L_4}" type="revolute">
+      <parent link="${NAME_LINK_ARM_L_3}" />
+      <child link="${NAME_LINK_ARM_L_4}" />
+      <origin xyz="0.0 0.185 0.0" rpy="0 0 0"/>
+      <limit 
+        lower="${JOINT_ARM_L_4_LOWER_LIMIT}" 
+        upper="${JOINT_ARM_L_4_UPPER_LIMIT}" 
+        effort="${EFFORT_LIMIT}" 
+        velocity="${VELOCITY_LIMIT}"/>
+      <axis xyz="0 0 1"/>
+      <dynamics damping="1.0e-6" friction="0.8"/>
+    </joint>
+
+    <link name="${NAME_LINK_ARM_L_4}">
+      <visual>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <geometry>
+          <mesh filename="${VISUAL_MESH_PATH}/L_Link4.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="${COLOR_LINK_ARM}"/>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <geometry>
+          <mesh filename="${COLLISION_MESH_PATH}/L_Link4.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin rpy="0 0 0" xyz="-0.006565 0.049925 0.000288"/>
+        <inertia ixx="713744.479e-09" ixy="28932.030e-09" ixz="945.049e-09" iyy="201407.446e-09" iyz="1163.230e-09" izz="670550.183e-09"/>
+        <mass value="0.2388"/>
+      </inertial>
+    </link>
+
+    <joint name="${NAME_JOINT_ARM_L_5}" type="revolute">
+      <parent link="${NAME_LINK_ARM_L_4}" />
+      <child link="${NAME_LINK_ARM_L_5}" />
+      <origin xyz="0.0 0.121 0.0" rpy="0 0 0"/>
+      <limit 
+        lower="${JOINT_ARM_L_5_LOWER_LIMIT}" 
+        upper="${JOINT_ARM_L_5_UPPER_LIMIT}" 
+        effort="${EFFORT_LIMIT}" 
+        velocity="${VELOCITY_LIMIT}"/>
+      <axis xyz="0 1 0"/>
+      <dynamics damping="1.0e-6" friction="0.8"/>
+    </joint>
+
+    <link name="${NAME_LINK_ARM_L_5}">
+      <visual>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <geometry>
+          <mesh filename="${VISUAL_MESH_PATH}/L_Link5.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="${COLOR_LINK_ARM}"/>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <geometry>
+          <mesh filename="${COLLISION_MESH_PATH}/L_Link5.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.007589 0.061076 -0.002274"/>
+        <inertia ixx="579946.563e-09" ixy="-46031.163e-09" ixz="-5880.637e-09" iyy="189277.859e-09" iyz="44197.789e-09" izz="562029.155e-09"/>
+        <mass value="0.2626"/>
+      </inertial>
+    </link>
+
+    <joint name="${NAME_JOINT_ARMARKER_L}" type="fixed">
+      <parent link="${NAME_LINK_ARM_L_5}" />
+      <child link="${NAME_LINK_ARMARKER_L}" />
+      <origin xyz="0.0467 0.093 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${NAME_LINK_ARMARKER_L}">
+      <visual>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <geometry>
+          <cylinder length="0.001" radius="0.001"/>
+        </geometry>
+        <material name="${COLOR_LINK_ARM}"/>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <geometry>
+          <cylinder length="0.001" radius="0.001"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="${NAME_JOINT_ARM_L_6}" type="revolute">
+      <parent link="${NAME_LINK_ARM_L_5}" />
+      <child link="${NAME_LINK_ARM_L_6}" />
+      <origin xyz="0.0 0.129 0.0" rpy="0 0 0"/>
+      <limit 
+        lower="${JOINT_ARM_L_6_LOWER_LIMIT}" 
+        upper="${JOINT_ARM_L_6_UPPER_LIMIT}" 
+        effort="${EFFORT_LIMIT}" 
+        velocity="${VELOCITY_LIMIT}"/>
+      <axis xyz="0 0 1"/>
+      <dynamics damping="1.0e-6" friction="0.8"/>
+    </joint>
+
+    <link name="${NAME_LINK_ARM_L_6}">
+      <visual>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <geometry>
+          <mesh filename="${VISUAL_MESH_PATH}/L_Link6.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="${COLOR_LINK_ARM}"/>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <geometry>
+          <mesh filename="${COLLISION_MESH_PATH}/L_Link6.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin rpy="0 0 0" xyz="-0.00018 -0.006533 -0.001068"/>
+        <inertia ixx="62986.174e-09" ixy="-190.025e-09" ixz="125.365e-09" iyy="96955.434e-09" iyz="1249.802e-09" izz="110996.490e-09"/>
+        <mass value="0.1544"/>
+      </inertial>
+    </link>
+
+    <joint name="${NAME_JOINT_ARM_L_7}" type="revolute">
+      <parent link="${NAME_LINK_ARM_L_6}" />
+      <child link="${NAME_LINK_ARM_L_7}" />
+      <origin xyz="0.0 0.0191 0.0" rpy="0 0 0"/>
+      <limit 
+        lower="${JOINT_ARM_L_7_LOWER_LIMIT}" 
+        upper="${JOINT_ARM_L_7_UPPER_LIMIT}" 
+        effort="${EFFORT_LIMIT}" 
+        velocity="${VELOCITY_LIMIT}"/>
+      <axis xyz="0 1 0"/>
+      <dynamics damping="1.0e-6" friction="0.8"/>
+    </joint>
+
+  </xacro:macro>
+
+</robot>

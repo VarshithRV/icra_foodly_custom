@@ -1,0 +1,291 @@
+<?xml version="1.0"?>
+
+<robot
+    name="foodly_rd"
+    xmlns:xacro="http://ros.org/wiki/xacro"
+    xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+    xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+    xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface">
+
+  <xacro:include filename="$(find foodly_rd_description)/urdf/foodly_rd_body.xacro"/>
+  <xacro:include filename="$(find foodly_rd_description)/urdf/foodly_rd_head.xacro"/>
+  <xacro:include filename="$(find foodly_rd_description)/urdf/foodly_rd_right_arm.xacro"/>
+  <xacro:include filename="$(find foodly_rd_description)/urdf/foodly_rd_right_gripper.xacro"/>
+  <xacro:include filename="$(find foodly_rd_description)/urdf/foodly_rd_left_arm.xacro"/>
+  <xacro:include filename="$(find foodly_rd_description)/urdf/foodly_rd_left_gripper.xacro"/>
+  <xacro:include filename="$(find foodly_rd_description)/urdf/foodly_rd_push_car.xacro"/>
+  <xacro:include filename="$(find foodly_rd_description)/urdf/foodly_rd_gazebo.xacro"/>
+  <xacro:include filename="$(find foodly_rd_description)/urdf/foodly_rd.gazebo_ros2_control.xacro"/>
+  <xacro:include filename="$(find foodly_rd_description)/urdf/foodly_rd_right.ros2_control.xacro"/>
+  <xacro:include filename="$(find foodly_rd_description)/urdf/foodly_rd_left.ros2_control.xacro"/>
+  <xacro:include filename="$(find foodly_rd_description)/urdf/foodly_rd_center.ros2_control.xacro"/>
+
+  <xacro:arg name="use_gazebo" default="false" />
+  <xacro:arg name="use_gazebo_head_camera" default="false" />
+  <xacro:arg name="use_gazebo_chest_camera" default="false" />
+  <xacro:arg name="use_right_mock_hardware" default="false" />
+  <xacro:arg name="use_left_mock_hardware" default="false" />
+  <xacro:arg name="use_center_mock_hardware" default="false" />
+  <xacro:arg name="right_port_name" default="/dev/foodly_rdspine" />
+  <xacro:arg name="right_baudrate" default="3000000" />
+  <xacro:arg name="right_manipulator_config_file_path" default="" />
+  <xacro:arg name="left_port_name" default="/dev/foodly_rdspine" />
+  <xacro:arg name="left_baudrate" default="3000000" />
+  <xacro:arg name="left_manipulator_config_file_path" default="" />
+  <xacro:arg name="center_port_name" default="/dev/foodly_rdspine" />
+  <xacro:arg name="center_baudrate" default="3000000" />
+  <xacro:arg name="center_manipulator_config_file_path" default="" />
+  <xacro:arg name="timeout_seconds" default="1.0" />
+  <xacro:arg name="fix_base_link" default="false" />
+  <xacro:arg name="gz_control_config_package" default="" />
+  <xacro:arg name="gz_control_config_file_path" default="" />
+  <xacro:property name="USE_GAZEBO_HEAD_CAMERA" value="$(arg use_gazebo_head_camera)"/>
+  <xacro:property name="USE_GAZEBO_CHEST_CAMERA" value="$(arg use_gazebo_chest_camera)"/>
+  <xacro:property name="USE_RIGHT_MOCK_HARDWARE" value="$(arg use_right_mock_hardware)"/>
+  <xacro:property name="USE_LEFT_MOCK_HARDWARE" value="$(arg use_left_mock_hardware)"/>
+  <xacro:property name="USE_CENTER_MOCK_HARDWARE" value="$(arg use_center_mock_hardware)"/>
+  <xacro:property name="RIGHT_PORT_NAME" value="$(arg right_port_name)"/>
+  <xacro:property name="RIGHT_BAUDRATE" value="$(arg right_baudrate)"/>
+  <xacro:property name="RIGHT_MANIPULATOR_CONFIG_FILE_PATH" value="$(arg right_manipulator_config_file_path)"/>
+  <xacro:property name="LEFT_PORT_NAME" value="$(arg left_port_name)"/>
+  <xacro:property name="LEFT_BAUDRATE" value="$(arg left_baudrate)"/>
+  <xacro:property name="LEFT_MANIPULATOR_CONFIG_FILE_PATH" value="$(arg left_manipulator_config_file_path)"/>
+  <xacro:property name="CENTER_PORT_NAME" value="$(arg center_port_name)"/>
+  <xacro:property name="CENTER_BAUDRATE" value="$(arg center_baudrate)"/>
+  <xacro:property name="CENTER_MANIPULATOR_CONFIG_FILE_PATH" value="$(arg center_manipulator_config_file_path)"/>
+  <xacro:property name="TIMEOUT_SECONDS" value="$(arg timeout_seconds)"/>
+  <xacro:property name="GZ_CONTROL_CONFIG_PACKAGE" value="$(arg gz_control_config_package)"/>
+  <xacro:property name="GZ_CONTROL_CONFIG_FILE_PATH" value="$(arg gz_control_config_file_path)"/>
+
+  <xacro:property name="NAME_HEAD_CAMERA_PREFIX" value="head_camera"/>
+  <xacro:property name="NAME_CHEST_CAMERA_PREFIX" value="chest_camera"/>
+
+  <material name="white">
+    <color rgba="0.9 0.9 0.9 1.0"/>
+  </material>
+
+  <material name="black">
+    <color rgba="0.1 0.1 0.1 1.0"/>
+  </material>
+
+  <material name="red">
+    <color rgba="0.8984375 0.0 0.0703125 1"/>
+  </material>
+
+  <material name="blue">
+    <color rgba="0.0703125 0.0 0.8984375 1"/>
+  </material>
+
+  <material name="green">
+    <color rgba="0.1 0.9 0.1 1"/>
+  </material>
+
+  <xacro:property name="NAME_LINK_BASE" value="base_link"/>
+  <xacro:property name="NAME_LINK_BODY" value="body_link"/>
+  <xacro:property name="NAME_LINK_PUSH_CAR" value="push_car_link"/>
+
+  <xacro:property name="NAME_LINK_NECK_1" value="neck_yaw_link"/>
+  <xacro:property name="NAME_LINK_NECK_2_1" value="neck_pitch_link"/>
+  <xacro:property name="NAME_LINK_NECK_2_2" value="neck_pitch_blue_link"/>
+  <xacro:property name="NAME_LINK_D415" value="neck_pitch_d415_link"/>
+
+  <xacro:property name="NAME_LINK_HEAD_CAMERA" value="${NAME_HEAD_CAMERA_PREFIX}_link"/>
+  <xacro:property name="NAME_LINK_CHEST_CAMERA" value="${NAME_CHEST_CAMERA_PREFIX}_link"/>
+
+  <xacro:property name="NAME_LINK_ARM_R_1" value="r_link1"/>
+  <xacro:property name="NAME_LINK_ARM_R_2" value="r_link2"/>
+  <xacro:property name="NAME_LINK_ARM_R_3" value="r_link3"/>
+  <xacro:property name="NAME_LINK_ARM_R_4" value="r_link4"/>
+  <xacro:property name="NAME_LINK_ARM_R_5" value="r_link5"/>
+  <xacro:property name="NAME_LINK_ARM_R_6" value="r_link6"/>
+  <xacro:property name="NAME_LINK_ARM_R_7" value="r_link7"/>
+  <xacro:property name="NAME_LINK_GRIPPER_R_A" value="r_gripperA_link"/>
+  <xacro:property name="NAME_LINK_TONG_R_A" value="r_tongA_link"/>
+  <xacro:property name="NAME_LINK_GRIPPER_R_B" value="r_gripperB_link"/>
+  <xacro:property name="NAME_LINK_TONG_R_B" value="r_tongB_link"/>
+  <xacro:property name="NAME_LINK_ARMARKER_R" value="r_link5_armarker"/>
+
+  <xacro:property name="NAME_LINK_ARM_L_1" value="l_link1"/>
+  <xacro:property name="NAME_LINK_ARM_L_2" value="l_link2"/>
+  <xacro:property name="NAME_LINK_ARM_L_3" value="l_link3"/>
+  <xacro:property name="NAME_LINK_ARM_L_4" value="l_link4"/>
+  <xacro:property name="NAME_LINK_ARM_L_5" value="l_link5"/>
+  <xacro:property name="NAME_LINK_ARM_L_6" value="l_link6"/>
+  <xacro:property name="NAME_LINK_ARM_L_7" value="l_link7"/>
+  <xacro:property name="NAME_LINK_GRIPPER_L_A" value="l_gripperA_link"/>
+  <xacro:property name="NAME_LINK_TONG_L_A" value="l_tongA_link"/>
+  <xacro:property name="NAME_LINK_GRIPPER_L_B" value="l_gripperB_link"/>
+  <xacro:property name="NAME_LINK_TONG_L_B" value="l_tongB_link"/>
+  <xacro:property name="NAME_LINK_ARMARKER_L" value="l_link5_armarker"/>
+
+  <xacro:if value="$(arg fix_base_link)">
+    <xacro:property name="NAME_JOINT_BASE" value="base_link_to_world_joint"/>
+  </xacro:if>
+  <xacro:property name="NAME_JOINT_BODY" value="waist_yaw_joint"/>
+  <xacro:property name="NAME_JOINT_PUSH_CAR" value="push_car_joint"/>
+
+  <xacro:property name="NAME_JOINT_NECK_1" value="neck_yaw_joint"/>
+  <xacro:property name="NAME_JOINT_NECK_2" value="neck_pitch_joint"/>
+
+  <xacro:property name="NAME_JOINT_HEAD_CAMERA" value="head_camera_joint"/>
+  <xacro:property name="NAME_JOINT_HEAD_CAMERA2" value="head_camera_joint2"/>
+  <xacro:property name="NAME_JOINT_HEAD_CAMERA3" value="head_camera_joint3"/>
+  <xacro:property name="NAME_JOINT_CHEST_CAMERA" value="chest_camera_joint"/>
+
+  <xacro:property name="NAME_JOINT_ARM_R_1" value="r_arm_joint1"/>
+  <xacro:property name="NAME_JOINT_ARM_R_2" value="r_arm_joint2"/>
+  <xacro:property name="NAME_JOINT_ARM_R_3" value="r_arm_joint3"/>
+  <xacro:property name="NAME_JOINT_ARM_R_4" value="r_arm_joint4"/>
+  <xacro:property name="NAME_JOINT_ARM_R_5" value="r_arm_joint5"/>
+  <xacro:property name="NAME_JOINT_ARM_R_6" value="r_arm_joint6"/>
+  <xacro:property name="NAME_JOINT_ARM_R_7" value="r_arm_joint7"/>
+  <xacro:property name="NAME_JOINT_GRIPPER_R_A" value="r_gripper_joint"/>
+  <xacro:property name="NAME_JOINT_TONG_R_A" value="r_tongA_joint"/>
+  <xacro:property name="NAME_JOINT_GRIPPER_R_B" value="r_gripper_mimic_joint"/>
+  <xacro:property name="NAME_JOINT_TONG_R_B" value="r_tongB_joint"/>
+  <xacro:property name="NAME_JOINT_ARMARKER_R" value="r_arm_armarker"/>
+
+  <xacro:property name="NAME_JOINT_ARM_L_1" value="l_arm_joint1"/>
+  <xacro:property name="NAME_JOINT_ARM_L_2" value="l_arm_joint2"/>
+  <xacro:property name="NAME_JOINT_ARM_L_3" value="l_arm_joint3"/>
+  <xacro:property name="NAME_JOINT_ARM_L_4" value="l_arm_joint4"/>
+  <xacro:property name="NAME_JOINT_ARM_L_5" value="l_arm_joint5"/>
+  <xacro:property name="NAME_JOINT_ARM_L_6" value="l_arm_joint6"/>
+  <xacro:property name="NAME_JOINT_ARM_L_7" value="l_arm_joint7"/>
+  <xacro:property name="NAME_JOINT_GRIPPER_L_A" value="l_gripper_joint"/>
+  <xacro:property name="NAME_JOINT_TONG_L_A" value="l_tongA_joint"/>
+  <xacro:property name="NAME_JOINT_GRIPPER_L_B" value="l_gripper_mimic_joint"/>
+  <xacro:property name="NAME_JOINT_TONG_L_B" value="l_tongB_joint"/>
+  <xacro:property name="NAME_JOINT_ARMARKER_L" value="l_arm_armarker"/>
+
+  <xacro:property name="EFFORT_LIMIT" value="4.0"/>
+  <xacro:property name="VELOCITY_LIMIT" value="5.969211435"/>
+
+  <xacro:property name="JOINT_BODY_LOWER_LIMIT" value="${radians(-118)}"/>
+  <xacro:property name="JOINT_BODY_UPPER_LIMIT" value="${radians(118)}"/>
+
+  <xacro:property name="JOINT_NECK_1_LOWER_LIMIT" value="${radians(-90)}"/>
+  <xacro:property name="JOINT_NECK_1_UPPER_LIMIT" value="${radians(180)}"/>
+  <xacro:property name="JOINT_NECK_2_LOWER_LIMIT" value="${radians(-33)}"/>
+  <xacro:property name="JOINT_NECK_2_UPPER_LIMIT" value="${radians(70)}"/>
+
+  <!-- Increase arm4 and gripper limits for gazebo operation -->
+  <!-- Related issue: https://github.com/rt-net/sciurus17_description/pull/6 -->
+  <xacro:property name="JOINT_ARM_R_1_LOWER_LIMIT" value="${radians(-90)}"/>
+  <xacro:property name="JOINT_ARM_R_1_UPPER_LIMIT" value="${radians(90)}"/>
+  <xacro:property name="JOINT_ARM_R_2_LOWER_LIMIT" value="${radians(-95)}"/>
+  <xacro:property name="JOINT_ARM_R_2_UPPER_LIMIT" value="${radians(10)}"/>
+  <xacro:property name="JOINT_ARM_R_3_LOWER_LIMIT" value="${radians(-90)}"/>
+  <xacro:property name="JOINT_ARM_R_3_UPPER_LIMIT" value="${radians(90)}"/>
+  <xacro:property name="JOINT_ARM_R_4_LOWER_LIMIT" value="${radians(-1)}"/>
+  <xacro:property name="JOINT_ARM_R_4_UPPER_LIMIT" value="${radians(154)}"/>
+  <xacro:property name="JOINT_ARM_R_5_LOWER_LIMIT" value="${radians(-157)}"/>
+  <xacro:property name="JOINT_ARM_R_5_UPPER_LIMIT" value="${radians(157)}"/>
+  <xacro:property name="JOINT_ARM_R_6_LOWER_LIMIT" value="${radians(-120)}"/>
+  <xacro:property name="JOINT_ARM_R_6_UPPER_LIMIT" value="${radians(60)}"/>
+  <xacro:property name="JOINT_ARM_R_7_LOWER_LIMIT" value="${radians(-167)}"/>
+  <xacro:property name="JOINT_ARM_R_7_UPPER_LIMIT" value="${radians(167)}"/>
+  <xacro:property name="JOINT_GRIPPER_R_LOWER_LIMIT" value="${radians(-20)}"/>
+  <xacro:property name="JOINT_GRIPPER_R_UPPER_LIMIT" value="${radians(86)}"/>
+
+  <xacro:property name="JOINT_ARM_L_1_LOWER_LIMIT" value="${radians(-90)}"/>
+  <xacro:property name="JOINT_ARM_L_1_UPPER_LIMIT" value="${radians(90)}"/>
+  <xacro:property name="JOINT_ARM_L_2_LOWER_LIMIT" value="${radians(-10)}"/>
+  <xacro:property name="JOINT_ARM_L_2_UPPER_LIMIT" value="${radians(95)}"/>
+  <xacro:property name="JOINT_ARM_L_3_LOWER_LIMIT" value="${radians(-90)}"/>
+  <xacro:property name="JOINT_ARM_L_3_UPPER_LIMIT" value="${radians(90)}"/>
+  <xacro:property name="JOINT_ARM_L_4_LOWER_LIMIT" value="${radians(-154)}"/>
+  <xacro:property name="JOINT_ARM_L_4_UPPER_LIMIT" value="${radians(1)}"/>
+  <xacro:property name="JOINT_ARM_L_5_LOWER_LIMIT" value="${radians(-157)}"/>
+  <xacro:property name="JOINT_ARM_L_5_UPPER_LIMIT" value="${radians(157)}"/>
+  <xacro:property name="JOINT_ARM_L_6_LOWER_LIMIT" value="${radians(-60)}"/>
+  <xacro:property name="JOINT_ARM_L_6_UPPER_LIMIT" value="${radians(120)}"/>
+  <xacro:property name="JOINT_ARM_L_7_LOWER_LIMIT" value="${radians(-167)}"/>
+  <xacro:property name="JOINT_ARM_L_7_UPPER_LIMIT" value="${radians(167)}"/>
+  <xacro:property name="JOINT_GRIPPER_L_LOWER_LIMIT" value="${radians(-86)}"/>
+  <xacro:property name="JOINT_GRIPPER_L_UPPER_LIMIT" value="${radians(20)}"/>
+
+  <xacro:property name="COLOR_LINK_BASE" value="white"/>
+  <xacro:property name="COLOR_LINK_BODY" value="white"/>
+  <xacro:property name="COLOR_LINK_HEAD" value="white"/>
+  <xacro:property name="COLOR_LINK_NECK" value="green"/>
+  <xacro:property name="COLOR_LINK_ARM" value="white"/>
+  <xacro:property name="COLOR_LINK_GRIPPER" value="blue"/>
+  <xacro:property name="COLOR_LINK_D415" value="black"/>
+
+  <xacro:property name="VISUAL_MESH_PATH" value="package://foodly_rd_description/meshes/visual"/>
+  <xacro:property name="COLLISION_MESH_PATH" value="package://foodly_rd_description/meshes/collision"/>
+
+  <!-- Used for fixing robot 'base_link' to Gazebo 'world' -->
+  <xacro:if value="$(arg fix_base_link)">
+    <link name="world"/>
+
+    <joint name="${NAME_JOINT_BASE}" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <parent link="world"/>
+      <child link="${NAME_LINK_BASE}"/>
+    </joint>
+  </xacro:if>
+
+  <xacro:foodly_rd_body/>
+
+  <xacro:foodly_rd_head/>
+
+  <xacro:foodly_rd_right_arm/>
+
+  <xacro:foodly_rd_right_gripper/>
+
+  <xacro:foodly_rd_left_arm/>
+
+  <xacro:foodly_rd_left_gripper/>
+
+  <xacro:foodly_rd_push_car/>
+
+  <xacro:unless value="$(arg use_gazebo)">
+
+    <xacro:foodly_rd_right_ros2_control_settings />
+    <xacro:foodly_rd_left_ros2_control_settings />
+    <xacro:foodly_rd_center_ros2_control_settings />
+
+  </xacro:unless>
+
+  <xacro:if value="$(arg use_gazebo)">
+
+    <xacro:gazebo_robot_settings/>
+
+    <xacro:foodly_rd_gazebo_ros2_control_settings/>
+
+    <joint name="${NAME_HEAD_CAMERA_PREFIX}_color_joint" type="fixed">
+      <origin xyz="0 0.015 0" rpy="0 0 0" />
+      <parent link="${NAME_LINK_HEAD_CAMERA}" />
+      <child link="${NAME_HEAD_CAMERA_PREFIX}_color_frame" />
+    </joint>
+
+    <link name="${NAME_HEAD_CAMERA_PREFIX}_color_frame"/>
+
+    <joint name="${NAME_HEAD_CAMERA_PREFIX}_color_optical_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="${radians(-90)} 0 ${radians(-90)}" />
+      <parent link="${NAME_HEAD_CAMERA_PREFIX}_color_frame" />
+      <child link="${NAME_HEAD_CAMERA_PREFIX}_color_optical_frame" />
+    </joint>
+
+    <link name="${NAME_HEAD_CAMERA_PREFIX}_color_optical_frame"/>
+
+    <joint name="${NAME_CHEST_CAMERA_PREFIX}_color_joint" type="fixed">
+      <origin xyz="0 0.015 0" rpy="0 0 0" />
+      <parent link="${NAME_LINK_CHEST_CAMERA}" />
+      <child link="${NAME_CHEST_CAMERA_PREFIX}_color_frame" />
+    </joint>
+
+    <link name="${NAME_CHEST_CAMERA_PREFIX}_color_frame"/>
+
+    <joint name="${NAME_CHEST_CAMERA_PREFIX}_color_optical_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="${radians(-90)} 0 ${radians(-90)}" />
+      <parent link="${NAME_CHEST_CAMERA_PREFIX}_color_frame" />
+      <child link="${NAME_CHEST_CAMERA_PREFIX}_color_optical_frame" />
+    </joint>
+
+    <link name="${NAME_CHEST_CAMERA_PREFIX}_color_optical_frame"/>
+
+  </xacro:if>
+</robot>

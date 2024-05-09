@@ -1,0 +1,17 @@
+/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/foodly_rd_vision//launch/head_camera.launch.py
+/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/foodly_rd_vision//launch/chest_camera.launch.py
+/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/ament_index/resource_index/package_run_dependencies/foodly_rd_vision
+/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/ament_index/resource_index/parent_prefix_path/foodly_rd_vision
+/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/foodly_rd_vision/environment/ament_prefix_path.sh
+/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/foodly_rd_vision/environment/ament_prefix_path.dsv
+/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/foodly_rd_vision/environment/path.sh
+/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/foodly_rd_vision/environment/path.dsv
+/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/foodly_rd_vision/local_setup.bash
+/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/foodly_rd_vision/local_setup.sh
+/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/foodly_rd_vision/local_setup.zsh
+/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/foodly_rd_vision/local_setup.dsv
+/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/foodly_rd_vision/package.dsv
+/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/ament_index/resource_index/packages/foodly_rd_vision
+/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/foodly_rd_vision/cmake/foodly_rd_visionConfig.cmake
+/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/foodly_rd_vision/cmake/foodly_rd_visionConfig-version.cmake
+/home/barracuda/icra_ws/src/icra_foodly_custom/install/foodly_rd_vision/share/foodly_rd_vision/package.xml

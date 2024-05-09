@@ -1,0 +1,8 @@
+source;share/foodly_rd/hook/cmake_prefix_path.ps1
+source;share/foodly_rd/hook/cmake_prefix_path.dsv
+source;share/foodly_rd/hook/cmake_prefix_path.sh
+source;share/foodly_rd/local_setup.bash
+source;share/foodly_rd/local_setup.dsv
+source;share/foodly_rd/local_setup.ps1
+source;share/foodly_rd/local_setup.sh
+source;share/foodly_rd/local_setup.zsh

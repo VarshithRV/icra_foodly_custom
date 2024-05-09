@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+cd `dirname $0`
+
+echo "search /dev/ttyUSB*"
+sleep 3
+
+array=$(find /dev/ttyUSB*)
+array1=($array)
+u2d2_id=(6014 0403)
+
+for i in `seq 1 ${#array1[@]}`
+do
+    result=`udevadm info ${array1[i-1]} | grep ID_VENDOR_ID`
+    vender_id=$(udevadm info ${array1[i-1]} | grep ID_VENDOR_ID | cut -f 2 -d "=")
+    model_id=$(udevadm info ${array1[i-1]} | grep ID_MODEL_I | cut -f 2 -d "=")
+    if [ ${vender_id} = ${u2d2_id[1]} -a ${model_id} = ${u2d2_id[0]} ] ; then
+        sudo chmod a+rw ${array1[i-1]}
+        dev=${array1[i-1]}
+        path=$(python3 -c "import broadcast_def; broadcast_def.ping('${array1[i-1]}')")
+        echo ${path}
+        symble=(`echo $path | tr -s '/' ' '`)
+        sudo bash -c "echo 1 > /sys/bus/usb-serial/devices/${symble[1]}/latency_timer"
+        if [ -e /dev/${symble[2]} ]; then
+            sudo unlink /dev/${symble[2]}
+        fi
+        sudo ln -s /${symble[0]}/${symble[1]} /dev/${symble[2]}
+    fi
+done

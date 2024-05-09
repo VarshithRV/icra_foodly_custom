@@ -1,0 +1,194 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="default">
+    <physics name="5ms" type="ignored">
+      <max_step_size>0.005</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+    <plugin
+      filename="ignition-gazebo-physics-system"
+      name="ignition::gazebo::systems::Physics">
+    </plugin>
+    <plugin
+      filename="ignition-gazebo-user-commands-system"
+      name="ignition::gazebo::systems::UserCommands">
+    </plugin>
+    <plugin
+      filename="ignition-gazebo-scene-broadcaster-system"
+      name="ignition::gazebo::systems::SceneBroadcaster">
+    </plugin>
+
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/OpenRobotics/models/Sun
+      </uri>
+    </include>
+
+    <include>
+      <uri>
+        https://fuel.gazebosim.org/1.0/OpenRobotics/models/Ground Plane
+      </uri>
+    </include>
+
+
+
+
+    <model name="table">
+  
+      <link name="table_link">
+        <visual name="table_visual">
+          <geometry>
+            <mesh>
+              <uri>meshes/Foodly_Table.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.1 0.1 0.1 1</ambient> <!-- Ambient light color -->
+            <diffuse>0.2 0.2 0.2 1</diffuse> <!-- Green color -->
+            <specular>0.1 0.1 0.1 1</specular> <!-- Light reflection properties -->
+            <emissive>0.0 0.0 0.0 1</emissive> <!-- Emission light properties -->
+          </material>
+        </visual>
+        <collision name="table_collision">
+          <geometry>
+            <mesh>
+              <uri>meshes/Foodly_Table.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+      </link>
+      
+      <link name="bowl1_link">
+        <visual name = "bowl1_visual">
+          <geometry>
+            <mesh>
+              <uri>meshes/Bowl.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.1 0.1 0.1 1</ambient> 
+            <diffuse>0.0 1.0 0.0 1</diffuse> 
+            <specular>0.1 0.1 0.1 1</specular> 
+            <emissive>0.0 0.0 0.0 1</emissive>
+          </material>
+        </visual>
+        <collision name = "bowl1_collision">
+          <geometry>
+            <mesh>
+              <uri>meshes/Bowl.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <pose>-0.10 0.2 0.7 1.57 0 0</pose>
+      </link>
+
+      <link name="bowl2_link">
+        <visual name = "bowl2_visual">
+          <geometry>
+            <mesh>
+              <uri>meshes/Bowl.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.1 0.1 0.1 1</ambient> 
+            <diffuse>0.0 1.0 0.0 1</diffuse> 
+            <specular>0.1 0.1 0.1 1</specular> 
+            <emissive>0.0 0.0 0.0 1</emissive>
+          </material>
+        </visual>
+        <collision name = "bowl1_collision">
+          <geometry>
+            <mesh>
+              <uri>meshes/Bowl.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <pose>0.02 0.2 0.7 1.57 0 0</pose>
+      </link>
+
+      <joint name="table_bowl1_joint" type="fixed">
+        <parent>table_link</parent> 
+        <child>bowl1_link</child> 
+        <pose>0 0 0 0 0 0</pose>
+      </joint>
+
+      <joint name="table_bowl2_joint" type="fixed">
+        <parent>table_link</parent> 
+        <child>bowl2_link</child> 
+        <pose>0 0 0 0 0 0</pose>
+      </joint>
+
+
+      <link name="bowl3_link">
+        <visual name = "bowl1_visual">
+          <geometry>
+            <mesh>
+              <uri>meshes/Bowl.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.1 0.1 0.1 1</ambient> 
+            <diffuse>0.0 1.0 0.0 1</diffuse> 
+            <specular>0.1 0.1 0.1 1</specular> 
+            <emissive>0.0 0.0 0.0 1</emissive>
+          </material>
+        </visual>
+        <collision name = "bowl3_collision">
+          <geometry>
+            <mesh>
+              <uri>meshes/Bowl.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <pose>-0.10 -0.05 0.7 1.57 0 0</pose>
+      </link>
+
+      <link name="bowl4_link">
+        <visual name = "bowl4_visual">
+          <geometry>
+            <mesh>
+              <uri>meshes/Bowl.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.1 0.1 0.1 1</ambient> 
+            <diffuse>0.0 1.0 0.0 1</diffuse> 
+            <specular>0.1 0.1 0.1 1</specular> 
+            <emissive>0.0 0.0 0.0 1</emissive>
+          </material>
+        </visual>
+        <collision name = "bowl1_collision">
+          <geometry>
+            <mesh>
+              <uri>meshes/Bowl.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <pose>0.02 -0.05 0.7 1.57 0 0</pose>
+      </link>
+
+      <joint name="table_bowl3_joint" type="fixed">
+        <parent>table_link</parent> 
+        <child>bowl3_link</child> 
+        <pose>0 0 0 0 0 0</pose>
+      </joint>
+
+      <joint name="table_bowl4_joint" type="fixed">
+        <parent>table_link</parent> 
+        <child>bowl4_link</child> 
+        <pose>0 0 0 0 0 0</pose>
+      </joint>
+      
+      <pose>0.25 0 0 0 0 0</pose>
+    </model>
+
+  </world>
+</sdf>

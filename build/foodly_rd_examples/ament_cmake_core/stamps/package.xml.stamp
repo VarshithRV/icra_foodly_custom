@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>foodly_rd_examples</name>
+  <version>0.1.0</version>
+  <description>Examples of Foodly Type R</description>
+  <maintainer email="shop@rt-net.jp">RT Corporation</maintainer>
+  <license>RT Corp. Software License Version 1.0</license>
+
+  <author email="s.aoki@rt-net.jp">Shota Aoki</author>
+  <author email="hayashi@rt-net.jp">RikiHayashi</author>
+  <author email="kuwagata@rt-net.jp">Atsushi Kuwagata</author>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>angles</depend>
+  <depend>foodly_rd_control</depend>
+  <depend>foodly_rd_description</depend>
+  <depend>foodly_rd_moveit_config</depend>
+  <depend>cv_bridge</depend>
+  <depend>geometry_msgs</depend>
+  <depend>image_geometry</depend>
+  <depend>libopencv-dev</depend>
+  <depend>moveit_ros_planning_interface</depend>
+  <depend>rclcpp</depend>
+  <depend>rclcpp_components</depend>
+  <depend>tf2_geometry_msgs</depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
