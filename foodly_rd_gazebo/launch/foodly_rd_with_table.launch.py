@@ -127,6 +127,19 @@ def generate_launch_description():
                 parameters=[{'config_file': bridge_file}],
                 output='screen'
             )
+    
+    transformer = Node(
+            package='tf2_ros',
+            executable='static_transform_publisher',
+            name='static_tf_pub',
+            output='screen',
+            arguments=[
+                '0', '0', '0',  # Translation (x, y, z)
+                '0', '0', '0', '1',  # Rotation (Quaternion: x, y, z, w)
+                'chest_camera_color_frame',  # Frame ID
+                'chest_camera_link_color_frame'  # Child Frame ID
+            ],
+        )
 
     return LaunchDescription([
         SetParameter(name='use_sim_time', value=True),
@@ -144,16 +157,5 @@ def generate_launch_description():
         spawn_waist_yaw_controller,
         move_group,
         bridge,
-        Node(
-            package='tf2_ros',
-            executable='static_transform_publisher',
-            name='static_tf_pub',
-            output='screen',
-            arguments=[
-                '0', '0', '0',  # Translation (x, y, z)
-                '0', '0', '0', '1',  # Rotation (Quaternion: x, y, z, w)
-                'chest_camera_color_frame',  # Frame ID
-                'chest_camera_link_color_frame'  # Child Frame ID
-            ],
-        ),
+        transformer,
     ])
