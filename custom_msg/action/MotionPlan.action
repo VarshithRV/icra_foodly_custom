@@ -1,0 +1,12 @@
+# Goal 
+float64 bowl_x
+float64 bowl_y
+float64 bowl_z
+
+---
+# Result
+bool motion_result
+
+---
+# Feedback
+string arm_state

@@ -82,7 +82,7 @@
         <joint name="l_arm_joint3" value="0"/>
         <joint name="l_arm_joint4" value="-2.6878"/>
         <joint name="l_arm_joint5" value="0"/>
-        <joint name="l_arm_joint6" value="2.0943"/>
+        <joint name="l_arm_joint6" value=""/>
         <joint name="l_arm_joint7" value="0"/>
     </group_state>
     <group_state name="r_arm_waist_init_pose" group="r_arm_waist_group">
