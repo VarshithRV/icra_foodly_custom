@@ -18,7 +18,8 @@
         "/home/barracuda/icra_ws/src/icra_foodly_custom/foodly_rd_examples/include/**",
         "/home/barracuda/icra_ws/src/icra_perception/include/**",
         "/home/barracuda/icra_ws/src/nekonote_conveyor_control-sample-notworks/include/**",
-        "/usr/include/**"
+        "/usr/include/**",
+        "/home/softrobot/foodly_icra/install/custom_msg/include/**"
       ],
       "name": "ROS",
       "intelliSenseMode": "gcc-x64",

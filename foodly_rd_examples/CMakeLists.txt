@@ -23,6 +23,8 @@ find_package(rclcpp REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 find_package(rclcpp_action REQUIRED)
 find_package(rclcpp_components REQUIRED)
+find_package(custom_msg REQUIRED)
+find_package(std_msgs REQUIRED)
 
 include_directories(include)
 
@@ -110,6 +112,9 @@ set(executable_list
   waist_control
   pick_and_place_right_arm_waist
   pick_and_place_left_arm
+  left_arm_server
+  test_left_arm
+  test_right_arm
 )
 foreach(loop_var IN LISTS executable_list)
   add_executable(${loop_var} src/${loop_var}.cpp)
@@ -124,7 +129,12 @@ foreach(loop_var IN LISTS executable_list)
     rclcpp
     tf2_geometry_msgs
     control_msgs
+    custom_msg
+    std_msgs
   )
+
+
+
 
   install(TARGETS
     ${loop_var}

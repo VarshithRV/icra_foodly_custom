@@ -1,0 +1,9 @@
+#Goal
+float64 conveyor_vel
+float64 period
+---
+#Result
+bool conveyor_result
+---
+
+
