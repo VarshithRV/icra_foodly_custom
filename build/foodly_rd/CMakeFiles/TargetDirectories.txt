@@ -1,9 +1,0 @@
-/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd/CMakeFiles/uninstall.dir
-/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd/CMakeFiles/foodly_rd_uninstall.dir
-/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd/CMakeFiles/test.dir
-/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd/CMakeFiles/edit_cache.dir
-/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd/CMakeFiles/rebuild_cache.dir
-/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd/CMakeFiles/list_install_components.dir
-/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd/CMakeFiles/install.dir
-/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd/CMakeFiles/install/local.dir
-/home/barracuda/icra_ws/src/icra_foodly_custom/build/foodly_rd/CMakeFiles/install/strip.dir

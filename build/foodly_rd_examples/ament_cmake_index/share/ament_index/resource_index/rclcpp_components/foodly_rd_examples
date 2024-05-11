@@ -1,4 +1,0 @@
-foodly_rd_examples::ColorDetection;lib/libcolor_detection.so
-foodly_rd_examples::NeckJtControl;lib/libneck_jt_control.so
-foodly_rd_examples::ObjectTracker;lib/libobject_tracker.so
-foodly_rd_examples::WaistJtControl;lib/libwaist_jt_control.so
