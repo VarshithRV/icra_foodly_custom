@@ -3,7 +3,8 @@ Panels:
     Help Height: 70
     Name: Displays
     Property Tree Widget:
-      Expanded: ~
+      Expanded:
+        - /PointStamped2/Status1
       Splitter Ratio: 0.5
     Tree Height: 202
   - Class: rviz_common/Help
@@ -572,6 +573,36 @@ Visualization Manager:
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
+    - Alpha: 1
+      Class: rviz_default_plugins/PointStamped
+      Color: 204; 41; 0
+      Enabled: true
+      History Length: 1
+      Name: PointStamped
+      Radius: 0.014999999664723873
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /don0_centroid_3d
+      Value: true
+    - Alpha: 1
+      Class: rviz_default_plugins/PointStamped
+      Color: 204; 41; 0
+      Enabled: true
+      History Length: 1
+      Name: PointStamped
+      Radius: 0.014999999664723873
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /don1_centroid_3d
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -590,25 +621,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 2.5088000297546387
+      Distance: 1.8446935415267944
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.006748186890035868
-        Y: 0.1358906626701355
-        Z: 0.02024812251329422
+        X: 0.01092936098575592
+        Y: 0.032642047852277756
+        Z: -0.09983010590076447
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.48000001907348633
+      Pitch: 0.60999995470047
       Target Frame: base_link
       Value: Orbit (rviz_default_plugins)
-      Yaw: 5.835184574127197
+      Yaw: 5.810185432434082
     Saved: ~
 Window Geometry:
   Displays:

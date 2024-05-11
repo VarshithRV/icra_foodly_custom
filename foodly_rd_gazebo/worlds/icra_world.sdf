@@ -58,7 +58,7 @@
         </collision>
       </link>
       
-      <link name="bowl1_link">
+      <!-- <link name="bowl1_link">
         <visual name = "bowl1_visual">
           <geometry>
             <mesh>
@@ -84,6 +84,12 @@
         <pose>-0.10 0.2 0.7 1.57 0 0</pose>
       </link>
 
+      <joint name="table_bowl1_joint" type="fixed">
+        <parent>table_link</parent> 
+        <child>bowl1_link</child> 
+        <pose>0 0 0 0 0 0</pose>
+      </joint>
+
       <link name="bowl2_link">
         <visual name = "bowl2_visual">
           <geometry>
@@ -99,7 +105,7 @@
             <emissive>0.0 0.0 0.0 1</emissive>
           </material>
         </visual>
-        <collision name = "bowl1_collision">
+        <collision name = "bowl2_collision">
           <geometry>
             <mesh>
               <uri>meshes/Bowl.stl</uri>
@@ -110,17 +116,11 @@
         <pose>0.02 0.2 0.7 1.57 0 0</pose>
       </link>
 
-      <joint name="table_bowl1_joint" type="fixed">
-        <parent>table_link</parent> 
-        <child>bowl1_link</child> 
-        <pose>0 0 0 0 0 0</pose>
-      </joint>
-
       <joint name="table_bowl2_joint" type="fixed">
         <parent>table_link</parent> 
         <child>bowl2_link</child> 
         <pose>0 0 0 0 0 0</pose>
-      </joint>
+      </joint> -->
 
 
       <link name="bowl3_link">
@@ -149,6 +149,12 @@
         <pose>-0.10 -0.05 0.7 1.57 0 0</pose>
       </link>
 
+      <joint name="table_bowl3_joint" type="fixed">
+        <parent>table_link</parent> 
+        <child>bowl3_link</child> 
+        <pose>0 0 0 0 0 0</pose>
+      </joint>
+
       <link name="bowl4_link">
         <visual name = "bowl4_visual">
           <geometry>
@@ -164,7 +170,7 @@
             <emissive>0.0 0.0 0.0 1</emissive>
           </material>
         </visual>
-        <collision name = "bowl1_collision">
+        <collision name = "bowl4_collision">
           <geometry>
             <mesh>
               <uri>meshes/Bowl.stl</uri>
@@ -174,12 +180,6 @@
         </collision>
         <pose>0.02 -0.05 0.7 1.57 0 0</pose>
       </link>
-
-      <joint name="table_bowl3_joint" type="fixed">
-        <parent>table_link</parent> 
-        <child>bowl3_link</child> 
-        <pose>0 0 0 0 0 0</pose>
-      </joint>
 
       <joint name="table_bowl4_joint" type="fixed">
         <parent>table_link</parent> 
