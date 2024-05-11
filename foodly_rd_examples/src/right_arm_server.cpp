@@ -110,7 +110,7 @@ int main(int argc, char **argv)
 
     auto node = std::make_shared<RightArServerNode>(); 
 
-
+    
     // Declare nodes
     auto move_group_arm_node = rclcpp::Node::make_shared("move_group_arm_node", node_options);
 
@@ -127,8 +127,6 @@ int main(int argc, char **argv)
     auto arm_joint_values = move_group_arm.getCurrentJointValues();
 
     while (true) { 
-
-
         if (node->goal_status) {
 
             RCLCPP_INFO(rclcpp::get_logger("Motion Planning"), "%f",  node->bowl_x);
@@ -258,7 +256,6 @@ int main(int argc, char **argv)
 
         RCLCPP_INFO(rclcpp::get_logger("Result from action"),"Waiting for Action request");
         loop_rate.sleep();
-
     }
 
 

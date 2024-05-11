@@ -51,6 +51,7 @@ ros2 launch foodly_rd_gazebo foodly_rd_with_table.launch.py use_head_camera:=fal
 
 # Terminal 2
 #  Run vision server
+ros2 run icra_perception vision.py
 
 # Terminal 3
 #  This for active the server node
@@ -63,3 +64,20 @@ ros2 run state_machine state_machine_client
 
 
 ### Run with real robot
+```bash
+# Terminal 1
+# This with the real hardware, most probably, it will already be launched
+ros2 launch foodly_rd_examples demo.launch.py
+
+# Terminal 2
+#  Run vision server
+ros2 run icra_perception vision.py
+
+# Terminal 3
+#  This for active the server node
+ros2 launch foodly_rd_examples example.launch.py 
+
+# Terminal 4
+#  This for state machine 
+ros2 run state_machine state_machine_client
+```

@@ -72,7 +72,6 @@ def generate_launch_description():
                     parameters=[{'robot_description': description_loader.load()},
                                 robot_description_semantic,
                                 kinematics_yaml])
-    
 
 
     return LaunchDescription([

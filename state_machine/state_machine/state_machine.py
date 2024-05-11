@@ -8,8 +8,15 @@ from geometry_msgs.msg import PointStamped
 import threading as td
 import time
 
+####### CONVERYOR TUNING PARAMETERS #######
+CONVEYOR_SPEED = 0.5 #m/s
+CONVEYOR_INTERVAL_1 = 3.0 #seconds
+CONVEYOR_INTERVAL_2 = 5.0 #seconds
+CONVEYOR_INTERVAL_3 = 3.0 #seconds
+MOTION_PLANNING_OFFSET_Z = 0.05 #METERS
+####### CONVERYOR TUNING PARAMETERS #######
 
-class CoveyorClient(Node): 
+class ConveyorClient(Node): 
     def __init__(self):
         super().__init__("conveyor_control_client") 
         self.count_until_client = ActionClient(
@@ -49,7 +56,6 @@ class CoveyorClient(Node):
         if (result.conveyor_result):
             self.result_status = True
             self.get_logger().info("Converyor belt done ... ")
-
 
 
 class LeftArmClient(Node): 
@@ -137,7 +143,7 @@ class RightArmClient(Node):
         if (result.motion_result):
             self.get_logger().info("left arm done moving")
 
-# Node containing all the clients for the central node
+
 class PerceptionClient(Node):
     def __init__(self):
         
@@ -145,26 +151,26 @@ class PerceptionClient(Node):
         
         # Subscriber for don0 Pose
         self.don0_subscription = self.create_subscription(
-            PointStamped, '/don0_centroid_3d', self.don0_pose_cb, 50
+            PointStamped, '/don0_centroid_3d', self.don0_point_cb, 50
         )
         
         # Subscriber for don1 Pose
         self.don1_subscription = self.create_subscription(
-            PointStamped, '/don1_centroid_3d', self.don1_pose_cb, 50
+            PointStamped, '/don1_centroid_3d', self.don1_point_cb, 50
         )
         
         # Pose variables to store messages
-        self.don0_pose = None
-        self.don1_pose = None
+        self.don0_point = None
+        self.don1_point = None
 
         # Add more clients or subscriber or servers here.
         #################################################
     
-    def don0_pose_cb(self, msg: PointStamped):
-        self.don0_pose = msg
+    def don0_point_cb(self, msg: PointStamped):
+        self.don0_point = msg
 
-    def don1_pose_cb(self, msg: PointStamped):
-        self.don1_pose = msg
+    def don1_point_cb(self, msg: PointStamped):
+        self.don1_point = msg
   
 
 def main(args=None):
@@ -172,56 +178,116 @@ def main(args=None):
 
 
     ######################################### define client #####################################
-    coveyor_node = CoveyorClient() 
+    conveyor_node = ConveyorClient() 
     left_arm_client = LeftArmClient()
     right_arm_client = RightArmClient()
     perception_client = PerceptionClient()
 
+    # conveyor_node_thread = td.Thread(target=rclpy.spin, args=(conveyor_node))
+    perception_client_thread = td.Thread(target=rclpy.spin, args=(perception_client,))
+    # left_arm_client_thread = td.Thread(target=rclpy.spin, args=(left_arm_client,))
+    # right_arm_client_thread = td.Thread(target=rclpy.spin, args=(right_arm_client,))
 
-    # ##################################### Control Conveyor Belt ##################################
-    # coveyor_node.send_goal(0.5,3.0)  #Both must be float
-    # while not (coveyor_node.result_status):
-    #     rclpy.spin_once(coveyor_node)
-    #     coveyor_node.get_logger().info('Wait for result from conveyor belt')
-    # coveyor_node.result_status = False
-    # ##############################################################################################
+    # conveyor_node_thread.start()
+    perception_client_thread.start()
+    # left_arm_client_thread.start()
+    # right_arm_client_thread.start()
 
+    print("All nodes are spinning successfully, starting the operation now")
 
+    try :
+        while True : 
+            x = input("Enter to start the iteration, 'x' to stop")
+            if x=="x":
+                break
 
-    ####################################### Left arm control #####################################
-    left_arm_client.send_goal(0.25,0.25,-0.1)
-    while not (left_arm_client.result_status):
-        rclpy.spin_once(left_arm_client)
-        left_arm_client.get_logger().info('Wait for result from left arm motion')
-    left_arm_client.result_status = False
-    ##############################################################################################
+            # Conveyor belt
+            print("Moving DONS to the Left arm")
+            conveyor_node.send_goal(CONVEYOR_SPEED,CONVEYOR_INTERVAL_1) 
+            conveyor_node.get_logger().info("Waiting for result from converyor belt")
+            while not (conveyor_node.result_status):
+                pass
+            conveyor_node.result_status = False
 
+            time.sleep(0.2)# give time for perception
 
+            # Left arm DON 0
+            print("Filling DON0")
+            left_arm_client.send_goal(
+                perception_client.don0_point.point.x,
+                perception_client.don0_point.point.y,
+                perception_client.don0_point.point.z
+                )
+            while not (left_arm_client.result_status):
+                # rclpy.spin_once(left_arm_client)
+                # left_arm_client.get_logger().info('Wait for result from left arm motion')
+                pass
+            left_arm_client.result_status = False
 
-    # ####################################### Right arm control #####################################
-    # right_arm_client.send_goal(0.25,-0.2,0.1)
-    # while not (right_arm_client.result_status):
-    #     rclpy.spin_once(right_arm_client)
-    #     right_arm_client.get_logger().info('Wait for result from right arm motion')
-    # right_arm_client.result_status = False
-    # ##############################################################################################
+            # Left arm DON 1
+            print("Filling DON1")
+            left_arm_client.send_goal(
+                perception_client.don1_point.point.x,
+                perception_client.don1_point.point.y,
+                perception_client.don1_point.point.z
+                )
+            while not (left_arm_client.result_status):
+                # rclpy.spin_once(left_arm_client)
+                # left_arm_client.get_logger().info('Wait for result from left arm motion')
+                pass
+            left_arm_client.result_status = False
 
+            # Conveyor belt
+            print("Moving DONS to the Right arm")
+            conveyor_node.send_goal(CONVEYOR_SPEED,CONVEYOR_INTERVAL_2) 
+            conveyor_node.get_logger().info("Waiting for result from converyor belt")
+            while not (conveyor_node.result_status):
+                pass
+            conveyor_node.result_status = False
 
+            time.sleep(0.2)# give time for perception
 
-    # thread = td.Thread(target=rclpy.spin, args=(perception_client,))
-    # thread.start() # start the spinning in a different thread
+            # Right arm DON0
+            print("Filling DON0")
+            right_arm_client.send_goal(
+                perception_client.don0_point.point.x,
+                perception_client.don0_point.point.y,
+                perception_client.don0_point.point.z
+                )
+            right_arm_client.get_logger().info('Wait for result from left arm motion')
+            while not (right_arm_client.result_status):
+                pass
+            right_arm_client.result_status = False
 
-    # ########################## WE HAVE CONTROL FROM HERE #################################
-    # while rclpy.ok():
-    #     if perception_client.don0_pose is not None:
-    #         perception_client.get_logger().info(f"don0_pose: {perception_client.don0_pose}")
-    #         time.sleep(0.5)
-    # ########################## WE HAVE CONTROL TILL HERE #################################
+            # Right arm DON1
+            print("Filling DON1")
+            right_arm_client.send_goal(
+                perception_client.don1_point.point.x,
+                perception_client.don1_point.point.y,
+                perception_client.don1_point.point.z
+                )
+            right_arm_client.get_logger().info('Wait for result from left arm motion')
+            while not (right_arm_client.result_status):
+                pass
+            right_arm_client.result_status = False
+
+            # Conveyor belt
+            print("Moving DONS to unloading position")
+            conveyor_node.send_goal(CONVEYOR_SPEED,CONVEYOR_INTERVAL_2) 
+            conveyor_node.get_logger().info("Waiting for result from converyor belt")
+            while not (conveyor_node.result_status):
+                pass
+            conveyor_node.result_status = False
+
+    except  KeyboardInterrupt:
+        print("Keyboard Interrupt detected, exiting")
     
-    
-    # thread.join() # waiting for the thread to finish( it actually won't finish because rclpy.spin() will run forever)
-    # perception_client.destroy_node()
-    rclpy.shutdown()
+    finally: 
+        conveyor_node.destroy_node()
+        left_arm_client.destroy_node()
+        right_arm_client.destroy_node()
+        perception_client.destroy_node()
+        rclpy.shutdown()
 
 
 if __name__ == "__main__":

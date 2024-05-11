@@ -120,7 +120,7 @@ int main(int argc, char **argv)
     auto move_group_arm_node = rclcpp::Node::make_shared("move_group_arm_node", node_options);
 
     // For current state monitor
-    rclcpp::executors::MultiThreadedExecutor executor;
+    rclcpp::executors::SingleThreadedExecutor executor;
     executor.add_node(move_group_arm_node);
     executor.add_node(node);
     std::thread([&executor]() {executor.spin();}).detach();
@@ -135,7 +135,7 @@ int main(int argc, char **argv)
 
 
         if (node->goal_status) {
-            node->goal_status = false;
+
 
             RCLCPP_INFO(rclcpp::get_logger("Motion Planning"), "%f",  node->bowl_x);
             RCLCPP_INFO(rclcpp::get_logger("Motion Planning"), "%f",  node->bowl_y);
@@ -258,14 +258,12 @@ int main(int argc, char **argv)
 
            
             node->motion_plan = false;
+            node->goal_status = false;
 
             }
                 if (!node->goal_status ){
                 RCLCPP_INFO(rclcpp::get_logger("Motion Plan"),"End of one cycle");
-                
         }
-
-
 
 
         RCLCPP_INFO(rclcpp::get_logger("Result from action"),"Waiting for Action request");
