@@ -113,8 +113,8 @@ set(executable_list
   pick_and_place_right_arm_waist
   pick_and_place_left_arm
   left_arm_server
-  test_left_arm
-  test_right_arm
+  right_arm_server
+  
 )
 foreach(loop_var IN LISTS executable_list)
   add_executable(${loop_var} src/${loop_var}.cpp)

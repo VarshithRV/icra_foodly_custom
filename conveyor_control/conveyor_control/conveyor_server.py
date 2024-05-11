@@ -24,13 +24,20 @@ class ConveyorVelServerNode(Node):
 
     def publish_msg(self):
         msg = Float64MultiArray()
+
+
+        ##################################### Where we define the speed of the conveyor belt ####################################
+        
         msg.data = [1.0, 2.0, 3.0]
+
+        #########################################################################################################################
+
         self.publisher_.publish(msg)
         
 
     def execute_callback(self,goal_handle: ServerGoalHandle):
         # get request from the goal 
-        result = SpeedControl.Result()
+        
 
         conveyor_vel = goal_handle.request.conveyor_vel 
         period = goal_handle.request.period
@@ -44,14 +51,16 @@ class ConveyorVelServerNode(Node):
 
         while time.time() < start_time + period:
             
-            self.get_logger().info("Time: " + str(time.time()))
+            elapsed_time = time.time()-start_time
+            decimal_part = f"{elapsed_time:.3f}"
+            self.get_logger().info("Time: " + str(decimal_part))
             self.publish_msg()
-            time.sleep(0.5)
+            time.sleep(0.1)
 
         #one doe 
         goal_handle.succeed()
 
-
+        result = SpeedControl.Result()
         # send the result
         result.conveyor_result = True
         return result

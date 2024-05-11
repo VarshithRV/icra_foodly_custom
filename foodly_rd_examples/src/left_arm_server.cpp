@@ -30,7 +30,15 @@ public:
 
     }
 
+
     bool goal_status = false;
+    double bowl_x ;
+    double bowl_y ;
+    double bowl_z ;
+
+    bool motion_plan = true;
+
+
 
 
 
@@ -62,25 +70,29 @@ private:
 
     void execute_goal(const std::shared_ptr<MotionPlanGoalHandle> goal_handle){
         // Get goal variable 
-        double bowl_x  = goal_handle->get_goal()->bowl_x;
-        double bowl_y  = goal_handle->get_goal()->bowl_y;
-        double bowl_z  = goal_handle->get_goal()->bowl_z;
-
-
-        // Execute the action
-
-        RCLCPP_INFO(this->get_logger(), "%f", bowl_x);
-        RCLCPP_INFO(this->get_logger(), "%f", bowl_y);
-        RCLCPP_INFO(this->get_logger(), "%f", bowl_z);
+        this->bowl_x  = goal_handle->get_goal()->bowl_x;
+        this->bowl_y  = goal_handle->get_goal()->bowl_y;
+        this->bowl_z  = goal_handle->get_goal()->bowl_z;
+        rclcpp::Rate loop_rate(0.75);
 
         this->goal_status = true;
+
+        while (this->motion_plan){
+            RCLCPP_INFO(this->get_logger(),"Arm is executing ... ");
+            loop_rate.sleep();this->goal_status = true;
+        }
+
+        this->motion_plan = true;
+        
         //set the final state and return result 
         
         auto result = std::make_shared<MotionPlan::Result>();
         result->motion_result = true ; 
+        RCLCPP_INFO(this->get_logger(),"Left arm action is done");
         goal_handle->succeed(result);
 
     }
+
 
     rclcpp_action::Server<MotionPlan>::SharedPtr left_arm_server_;
 
@@ -99,6 +111,7 @@ int main(int argc, char **argv)
     node_options.automatically_declare_parameters_from_overrides(true);
     rclcpp::Rate loop_rate(0.25);
 
+    const std::shared_ptr<MotionPlanGoalHandle> goal_handle;
     auto node = std::make_shared<LeftArServerNode>(); 
 
 
@@ -121,12 +134,115 @@ int main(int argc, char **argv)
 
 
         if (node->goal_status) {
+            RCLCPP_INFO(rclcpp::get_logger("Motion Planning"), "%f",  node->bowl_x);
+            RCLCPP_INFO(rclcpp::get_logger("Motion Planning"), "%f",  node->bowl_y);
+            RCLCPP_INFO(rclcpp::get_logger("Motion Planning"), "%f",  node->bowl_z);
 
             RCLCPP_INFO(rclcpp::get_logger("Motion Planning"),"Start Motion Planning");
+            
+            
             move_group_arm.setNamedTarget("l_arm_init_pose");
             move_group_arm.move();
 
 
+            // set joint value 
+            arm_joint_values[0] = angles::from_degrees(0);
+            arm_joint_values[1] = angles::from_degrees(90.0);
+            arm_joint_values[2] = angles::from_degrees(0);
+            arm_joint_values[3] = angles::from_degrees(-109.0);
+            arm_joint_values[4] = angles::from_degrees(0.0);
+            arm_joint_values[5] = angles::from_degrees(104.0);
+            arm_joint_values[6] = angles::from_degrees(0.0);
+
+            move_group_arm.setJointValueTarget(arm_joint_values);
+            move_group_arm.move();
+
+
+
+            // --------- > PrepPick <------------
+
+
+            arm_joint_values[0] = angles::from_degrees(-43.0);
+            arm_joint_values[1] = angles::from_degrees(90.0);
+            arm_joint_values[2] = angles::from_degrees(0.0);
+            arm_joint_values[3] = angles::from_degrees(-52.0);
+            arm_joint_values[4] = angles::from_degrees(0.0);
+            arm_joint_values[5] = angles::from_degrees(60.0);
+            arm_joint_values[6] = angles::from_degrees(0.0);
+
+            move_group_arm.setJointValueTarget(arm_joint_values);
+            move_group_arm.move();
+
+
+
+
+            // =============> Pick <=============
+            arm_joint_values[0] = angles::from_degrees(-48.0);
+            arm_joint_values[1] = angles::from_degrees(90.0);
+            arm_joint_values[2] = angles::from_degrees(0.0);
+            arm_joint_values[3] = angles::from_degrees(-38.0);
+            arm_joint_values[4] = angles::from_degrees(0.0);
+            arm_joint_values[5] = angles::from_degrees(51.0);
+            arm_joint_values[6] = angles::from_degrees(0.0);
+
+            move_group_arm.setJointValueTarget(arm_joint_values);
+            move_group_arm.move();
+
+
+
+            // --------- > PrepPick <------------
+
+            arm_joint_values[0] = angles::from_degrees(-43.0);
+            arm_joint_values[1] = angles::from_degrees(90.0);
+            arm_joint_values[2] = angles::from_degrees(0.0);
+            arm_joint_values[3] = angles::from_degrees(-52.0);
+            arm_joint_values[4] = angles::from_degrees(0.0);
+            arm_joint_values[5] = angles::from_degrees(60.0);
+            arm_joint_values[6] = angles::from_degrees(0.0);
+
+            move_group_arm.setJointValueTarget(arm_joint_values);
+            move_group_arm.move();
+
+
+
+            // --------- > Standby <-------------
+
+            // set joint value 
+            arm_joint_values[0] = angles::from_degrees(0);
+            arm_joint_values[1] = angles::from_degrees(90.0);
+            arm_joint_values[2] = angles::from_degrees(0);
+            arm_joint_values[3] = angles::from_degrees(-109.0);
+            arm_joint_values[4] = angles::from_degrees(0.0);
+            arm_joint_values[5] = angles::from_degrees(104.0);
+            arm_joint_values[6] = angles::from_degrees(0.0);
+
+            move_group_arm.setJointValueTarget(arm_joint_values);
+            move_group_arm.move();
+
+
+            // ===========> Place <=============
+            // set joint value 
+            // arm_joint_values[0] = angles::from_degrees(0);
+            // arm_joint_values[1] = angles::from_degrees(90.0);
+            // arm_joint_values[2] = angles::from_degrees(0);
+            // arm_joint_values[3] = angles::from_degrees(-75.0);
+            // arm_joint_values[4] = angles::from_degrees(0.0);
+            // arm_joint_values[5] = angles::from_degrees(91.0);
+            // arm_joint_values[6] = angles::from_degrees(0.0);
+
+            // move_group_arm.setJointValueTarget(arm_joint_values);
+            // move_group_arm.move();
+
+            move_group_arm.setPoseTarget(
+                pose_presets::left_arm_downward(node->bowl_x, node->bowl_y, node->bowl_z));
+            move_group_arm.move();
+
+
+
+
+            // --------- > Standby <-------------
+
+            // set joint value 
             arm_joint_values[0] = angles::from_degrees(0);
             arm_joint_values[1] = angles::from_degrees(90.0);
             arm_joint_values[2] = angles::from_degrees(0);
@@ -139,6 +255,7 @@ int main(int argc, char **argv)
             move_group_arm.move();
 
             node->goal_status = false;
+            node->motion_plan = false;
 
         }
 

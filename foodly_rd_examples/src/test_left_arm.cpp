@@ -70,11 +70,7 @@ int main(int argc, char ** argv)
   move_group_arm.move();
 
 
-
-
 // --------- > PrepPick <------------
-
-
   arm_joint_values[0] = angles::from_degrees(-43.0);
   arm_joint_values[1] = angles::from_degrees(90.0);
   arm_joint_values[2] = angles::from_degrees(0.0);
@@ -85,8 +81,6 @@ int main(int argc, char ** argv)
 
   move_group_arm.setJointValueTarget(arm_joint_values);
   move_group_arm.move();
-
-
 
 
 // =============> Pick <=============

@@ -44,29 +44,41 @@ def generate_launch_description():
 
     kinematics_yaml = load_yaml('foodly_rd_moveit_config', 'config/kinematics.yaml')
 
-    declare_example_name = DeclareLaunchArgument(
-        'example', default_value='gripper_control',
-        description=('Set an example executable name: '
-                     '[gripper_control, neck_control, waist_control,'
-                     'pick_and_place_right_arm_waist, pick_and_place_left_arm]')
-    )
+    # declare_example_name = DeclareLaunchArgument(
+    #     'example', default_value='gripper_control',
+    #     description=('Set an example executable name: '
+    #                  '[gripper_control, neck_control, waist_control,'
+    #                  'pick_and_place_right_arm_waist, pick_and_place_left_arm]')
+    # )
 
     declare_use_sim_time = DeclareLaunchArgument(
         'use_sim_time', default_value='false',
         description=('Set true when using the gazebo simulator.')
     )
 
-    example_node = Node(name=[LaunchConfiguration('example'), '_node'],
+    left_arm_server_node = Node(name=['left_arm_server', '_node'],
                         package='foodly_rd_examples',
-                        executable=LaunchConfiguration('example'),
-                        output='screen',
+                        executable='left_arm_server',
+                        output='log',
                         parameters=[{'robot_description': description_loader.load()},
                                     robot_description_semantic,
                                     kinematics_yaml])
+    
+
+    right_arm_server_node = Node(name=['right_arm_server', '_node'],
+                    package='foodly_rd_examples',
+                    executable='right_arm_server',
+                    output='log',
+                    parameters=[{'robot_description': description_loader.load()},
+                                robot_description_semantic,
+                                kinematics_yaml])
+    
+
 
     return LaunchDescription([
         declare_use_sim_time,
         SetParameter(name='use_sim_time', value=LaunchConfiguration('use_sim_time')),
-        declare_example_name,
-        example_node
+        # declare_example_name,
+        left_arm_server_node,
+        right_arm_server_node
     ])
