@@ -142,8 +142,6 @@ class PerceptionClient(Node):
     def __init__(self):
         
         super().__init__('central_client')
-        self.get_logger().info('Central Client Node Started')
-        self.get_logger().info("Changes")
         
         # Subscriber for don0 Pose
         self.don0_subscription = self.create_subscription(
@@ -191,7 +189,7 @@ def main(args=None):
 
 
     ####################################### Left arm control #####################################
-    left_arm_client.send_goal(0.25,0.2,0.1)
+    left_arm_client.send_goal(0.25,0.25,-0.1)
     while not (left_arm_client.result_status):
         rclpy.spin_once(left_arm_client)
         left_arm_client.get_logger().info('Wait for result from left arm motion')
@@ -200,13 +198,13 @@ def main(args=None):
 
 
 
-    ####################################### Right arm control #####################################
-    right_arm_client.send_goal(0.25,0.2,0.1)
-    while not (right_arm_client.result_status):
-        rclpy.spin_once(right_arm_client)
-        right_arm_client.get_logger().info('Wait for result from right arm motion')
-    right_arm_client.result_status = False
-    ##############################################################################################
+    # ####################################### Right arm control #####################################
+    # right_arm_client.send_goal(0.25,-0.2,0.1)
+    # while not (right_arm_client.result_status):
+    #     rclpy.spin_once(right_arm_client)
+    #     right_arm_client.get_logger().info('Wait for result from right arm motion')
+    # right_arm_client.result_status = False
+    # ##############################################################################################
 
 
 

@@ -110,6 +110,7 @@ int main(int argc, char **argv)
     rclcpp::NodeOptions node_options;
     node_options.automatically_declare_parameters_from_overrides(true);
     rclcpp::Rate loop_rate(0.25);
+    rclcpp::Rate loop_action_rate(0.125);
 
     const std::shared_ptr<MotionPlanGoalHandle> goal_handle;
     auto node = std::make_shared<LeftArServerNode>(); 
@@ -134,6 +135,8 @@ int main(int argc, char **argv)
 
 
         if (node->goal_status) {
+            node->goal_status = false;
+
             RCLCPP_INFO(rclcpp::get_logger("Motion Planning"), "%f",  node->bowl_x);
             RCLCPP_INFO(rclcpp::get_logger("Motion Planning"), "%f",  node->bowl_y);
             RCLCPP_INFO(rclcpp::get_logger("Motion Planning"), "%f",  node->bowl_z);
@@ -172,7 +175,6 @@ int main(int argc, char **argv)
 
             move_group_arm.setJointValueTarget(arm_joint_values);
             move_group_arm.move();
-
 
 
 
@@ -254,10 +256,17 @@ int main(int argc, char **argv)
             move_group_arm.setJointValueTarget(arm_joint_values);
             move_group_arm.move();
 
-            node->goal_status = false;
+           
             node->motion_plan = false;
 
+            }
+                if (!node->goal_status ){
+                RCLCPP_INFO(rclcpp::get_logger("Motion Plan"),"End of one cycle");
+                
         }
+
+
+
 
         RCLCPP_INFO(rclcpp::get_logger("Result from action"),"Waiting for Action request");
         loop_rate.sleep();
