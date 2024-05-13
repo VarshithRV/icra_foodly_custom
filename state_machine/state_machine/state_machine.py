@@ -23,6 +23,8 @@ Y2 = 200 # bottom
 ############################################
 MASK_THRESHOLD = 2 # mask will become slimmer if the value is decreased, smaller => more precise range(0, 255)
 ############################################
+FEEDBACK_THRESHOLD = 10 # threshold for the image feedback
+############################################
 
 ####### CONVERYOR TUNING PARAMETERS #######
 CONVEYOR_SPEED = 0.5 #m/s
@@ -238,7 +240,7 @@ class ImageFeedbackNode(Node):
             return False
         # Calculate the difference between the average RGB values
         diff = np.linalg.norm(avg_rgb1 - avg_rgb2)
-        return diff > 10
+        return diff > FEEDBACK_THRESHOLD
 
     # function to get the average RGB values of the full image
     def get_avg_rgb(self):
@@ -256,8 +258,6 @@ class ImageFeedbackNode(Node):
         self.counter0 += 1
         self.color_image = self.cv_bridge.imgmsg_to_cv2(msg, desired_encoding="passthrough")
         self.color_image = self.color_image[Y1:-Y2,X1:-X2]
-        # write the image to check the cropping
-        cv2.imwrite('color_image.png', self.color_image)
 
 
     # Callback function for the CameraInfo message
