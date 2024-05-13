@@ -75,11 +75,12 @@ private:
         this->bowl_z  = goal_handle->get_goal()->bowl_z;
         rclcpp::Rate loop_rate(0.75);
 
+        RCLCPP_INFO(this->get_logger(),"Goal status has set to TRUE !!!!");
         this->goal_status = true;
 
         while (this->motion_plan){
             RCLCPP_INFO(this->get_logger(),"Arm is executing ... ");
-            loop_rate.sleep();this->goal_status = true;
+            loop_rate.sleep();
         }
 
         this->motion_plan = true;
@@ -132,10 +133,11 @@ int main(int argc, char **argv)
     auto arm_joint_values = move_group_arm.getCurrentJointValues();
 
     while (true) { 
-
+        if (node->goal_status){
+            RCLCPP_INFO(rclcpp::get_logger("Flow control"),"True");
+        }
 
         if (node->goal_status) {
-
 
             RCLCPP_INFO(rclcpp::get_logger("Motion Planning"), "%f",  node->bowl_x);
             RCLCPP_INFO(rclcpp::get_logger("Motion Planning"), "%f",  node->bowl_y);
@@ -259,20 +261,13 @@ int main(int argc, char **argv)
            
             node->motion_plan = false;
             node->goal_status = false;
-
+            RCLCPP_INFO(rclcpp::get_logger("Motion Plan left arm"),"End of one cycle");
             }
-                if (!node->goal_status ){
-                RCLCPP_INFO(rclcpp::get_logger("Motion Plan"),"End of one cycle");
-        }
 
-
-        RCLCPP_INFO(rclcpp::get_logger("Result from action"),"Waiting for Action request");
+        RCLCPP_INFO(rclcpp::get_logger("Left arm"),"Waiting for Action request");
         loop_rate.sleep();
 
     }
-
-
-
 
 
     RCLCPP_INFO(rclcpp::get_logger("Node"),"This node is shutting down...");

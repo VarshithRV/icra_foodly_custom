@@ -78,7 +78,7 @@ private:
 
         while (this->motion_plan){
             RCLCPP_INFO(this->get_logger(),"Arm is executing ... ");
-            loop_rate.sleep();this->goal_status = true;
+            loop_rate.sleep();
         }
 
         this->motion_plan = true;
@@ -95,7 +95,6 @@ private:
 
 
 };
-
 
 
 
@@ -251,10 +250,10 @@ int main(int argc, char **argv)
 
             node->goal_status = false;
             node->motion_plan = false;
-
+            RCLCPP_INFO(rclcpp::get_logger("Motion Plan right arm"),"End of one cycle");
         }
 
-        RCLCPP_INFO(rclcpp::get_logger("Result from action"),"Waiting for Action request");
+        RCLCPP_INFO(rclcpp::get_logger("Right arm"),"Waiting for Action request");
         loop_rate.sleep();
     }
 
