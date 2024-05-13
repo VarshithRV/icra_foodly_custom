@@ -6,16 +6,16 @@
 
     <link name="${NAME_LINK_ARM_R_7}">
       <visual>
-        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <origin rpy="0 0 3.14" xyz="0.035 0.0 -1.012"/>
         <geometry>
-          <mesh filename="${VISUAL_MESH_PATH}/R_Link7.stl" scale="1.0 1.0 1.0"/>
+          <mesh filename="${VISUAL_MESH_PATH}/Gripper_v23.2.STL" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="${COLOR_LINK_GRIPPER}"/>
       </visual>
       <collision>
-        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <origin rpy="0 0 3.14" xyz="0.01 0.0 -1.012"/>
         <geometry>
-          <mesh filename="${COLLISION_MESH_PATH}/R_Link7.stl" scale="1.0 1.0 1.0"/>
+          <mesh filename="${COLLISION_MESH_PATH}/Gripper_v23.2.STL" scale="0.001 0.001 0.001"/>
         </geometry>
       </collision>
       <inertial>
@@ -41,14 +41,14 @@
       <visual>
         <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
         <geometry>
-          <mesh filename="${VISUAL_MESH_PATH}/R_GripperA.stl" scale="1.0 1.0 1.0"/>
+          <mesh filename="${VISUAL_MESH_PATH}/R_GripperA.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="${COLOR_LINK_GRIPPER}"/>
       </visual>
       <collision>
         <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
         <geometry>
-          <mesh filename="${COLLISION_MESH_PATH}/R_GripperA.stl" scale="1.0 1.0 1.0"/>
+          <mesh filename="${COLLISION_MESH_PATH}/R_GripperA.stl" scale="0.001 0.001 0.001"/>
         </geometry>
       </collision>
       <inertial>
@@ -62,14 +62,14 @@
       <visual>
         <origin rpy="0 0 3.14" xyz="0.0 0.0 0.0"/>
         <geometry>
-            <mesh filename="${VISUAL_MESH_PATH}/Tong.stl" />
+            <mesh filename="${VISUAL_MESH_PATH}/Tong.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="${COLOR_LINK_GRIPPER}"/>
       </visual>
       <collision>
         <origin rpy="0 0 3.14" xyz="0.0 0.0 0.0"/>
         <geometry>
-          <mesh filename="${COLLISION_MESH_PATH}/Tong.stl" />
+          <mesh filename="${COLLISION_MESH_PATH}/Tong.stl" scale="0.001 0.001 0.001"/>
         </geometry>
       </collision>
     </link>
@@ -106,14 +106,14 @@
       <visual>
         <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
         <geometry>
-          <mesh filename="${VISUAL_MESH_PATH}/R_GripperB.stl" scale="1.0 1.0 1.0"/>
+          <mesh filename="${VISUAL_MESH_PATH}/R_GripperB.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="${COLOR_LINK_GRIPPER}"/>
       </visual>
       <collision>
         <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
         <geometry>
-          <mesh filename="${COLLISION_MESH_PATH}/R_GripperB.stl" scale="1.0 1.0 1.0"/>
+          <mesh filename="${COLLISION_MESH_PATH}/R_GripperB.stl" scale="0.001 0.001 0.001"/>
         </geometry>
       </collision>
       <inertial>
@@ -127,14 +127,14 @@
       <visual>
         <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
         <geometry>
-            <mesh filename="${VISUAL_MESH_PATH}/Tong.stl" />
+            <mesh filename="${VISUAL_MESH_PATH}/Tong.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="${COLOR_LINK_GRIPPER}"/>
       </visual>
       <collision>
         <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
         <geometry>
-          <mesh filename="${COLLISION_MESH_PATH}/Tong.stl" />
+          <mesh filename="${COLLISION_MESH_PATH}/Tong.stl" scale="0.001 0.001 0.001"/>
         </geometry>
       </collision>
     </link>

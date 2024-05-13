@@ -81,3 +81,10 @@ ros2 launch foodly_rd_examples example.launch.py
 #  This for state machine 
 ros2 run state_machine state_machine_client
 ```
+
+### To update packgage 
+
+```bash
+cd icra_foodly_custom
+git pull origin main 
+```

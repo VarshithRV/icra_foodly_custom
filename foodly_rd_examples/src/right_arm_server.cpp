@@ -255,7 +255,7 @@ int main(int argc, char **argv)
 
         RCLCPP_INFO(rclcpp::get_logger("Right arm"),"Waiting for Action request");
         loop_rate.sleep();
-    }
+    } 
 
 
     RCLCPP_INFO(rclcpp::get_logger("Node"),"This node is shutting down...");
