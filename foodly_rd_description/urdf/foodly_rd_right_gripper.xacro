@@ -13,7 +13,7 @@
         <material name="${COLOR_LINK_GRIPPER}"/>
       </visual>
       <collision>
-        <origin rpy="0 0 3.14" xyz="0.01 0.0 -1.012"/>
+        <origin rpy="0 0 3.14" xyz="0.035 0.0 -1.012"/>
         <geometry>
           <mesh filename="${COLLISION_MESH_PATH}/Gripper_v23.2.STL" scale="0.001 0.001 0.001"/>
         </geometry>
