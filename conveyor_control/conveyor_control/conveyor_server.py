@@ -22,13 +22,13 @@ class ConveyorVelServerNode(Node):
 
         self.publisher_ = self.create_publisher(Float64MultiArray,"nekonote_conveyor/forward_position_controller/commands",10)
 
-    def publish_msg(self):
+    def publish_msg(self,cmd_vel):
         msg = Float64MultiArray()
 
 
         ##################################### Where we define the speed of the conveyor belt ####################################
         
-        msg.data = [1.0, 2.0, 3.0]
+        msg.data = [cmd_vel]
 
         #########################################################################################################################
 
@@ -54,7 +54,7 @@ class ConveyorVelServerNode(Node):
             elapsed_time = time.time()-start_time
             decimal_part = f"{elapsed_time:.3f}"
             self.get_logger().info("Time: " + str(decimal_part))
-            self.publish_msg()
+            self.publish_msg(conveyor_vel)
             time.sleep(0.1)
 
         #one doe 

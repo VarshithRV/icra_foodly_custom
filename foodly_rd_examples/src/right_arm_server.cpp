@@ -248,6 +248,11 @@ int main(int argc, char **argv)
             move_group_arm.setJointValueTarget(arm_joint_values);
             move_group_arm.move();
 
+
+            move_group_arm.setNamedTarget("l_arm_init_pose");
+            move_group_arm.move();
+
+
             node->goal_status = false;
             node->motion_plan = false;
             RCLCPP_INFO(rclcpp::get_logger("Motion Plan right arm"),"End of one cycle");

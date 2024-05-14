@@ -72,6 +72,12 @@ def generate_launch_description():
                     parameters=[{'robot_description': description_loader.load()},
                                 robot_description_semantic,
                                 kinematics_yaml])
+    
+    conveyor_server = Node(name=['conveyor_server', '_node'],
+                package='conveyor_control',
+                executable='conveyor_server',
+                output='log',)
+
 
 
     return LaunchDescription([
@@ -79,5 +85,6 @@ def generate_launch_description():
         SetParameter(name='use_sim_time', value=LaunchConfiguration('use_sim_time')),
         # declare_example_name,
         left_arm_server_node,
-        right_arm_server_node
+        right_arm_server_node,
+        conveyor_server
     ])

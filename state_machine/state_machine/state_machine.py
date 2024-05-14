@@ -220,17 +220,17 @@ def main(args=None):
             if x=="x":
                 break
 
-            executor.spin_once()
+            # executor.spin_once()
         
             # ######################################  Conveyor belt #######################################
-            # print("Moving DONS to the Left arm")
-            # conveyor_node.send_goal(CONVEYOR_SPEED,CONVEYOR_INTERVAL_1) 
-            # conveyor_node.get_logger().info("Waiting for result from converyor belt")
-            # while not (conveyor_node.result_status):
-            #     pass
-            # conveyor_node.result_status = False
+            print("Moving DONS to the Left arm")
+            conveyor_node.send_goal(CONVEYOR_SPEED,CONVEYOR_INTERVAL_1) 
+            conveyor_node.get_logger().info("Waiting for result from converyor belt")
+            while not (conveyor_node.result_status):
+                executor.spin_once()
+            conveyor_node.result_status = False
 
-            # time.sleep(0.2)# give time for perception
+            time.sleep(0.2)# give time for perception
 
             # ###################################### Left arm DON 0 #######################################
             print("Filling DON0")
@@ -245,6 +245,8 @@ def main(args=None):
             left_arm_client.get_logger().info('Wait for result from left arm motion')
             while not (left_arm_client.result_status):
                 executor.spin_once()
+                left_arm_client.get_logger().info('in loop')
+
             left_arm_client.get_logger().info('First bowl success')
             left_arm_client.result_status = False
 
@@ -258,8 +260,10 @@ def main(args=None):
                 perception_client.don1_point.point.y,
                 perception_client.don1_point.point.z
                 )
+            left_arm_client.get_logger().info('Wait for result from left arm motion')
             while not (left_arm_client.result_status):
                 executor.spin_once()
+                left_arm_client.get_logger().info('in loop')
             left_arm_client.get_logger().info('Second bowl success')
             left_arm_client.result_status = False
 

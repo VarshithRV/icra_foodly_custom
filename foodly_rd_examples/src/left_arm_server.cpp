@@ -146,8 +146,8 @@ int main(int argc, char **argv)
             RCLCPP_INFO(rclcpp::get_logger("Motion Planning"),"Start Motion Planning");
             
             
-            move_group_arm.setNamedTarget("l_arm_init_pose");
-            move_group_arm.move();
+            // move_group_arm.setNamedTarget("l_arm_init_pose");
+            // move_group_arm.move();
 
 
             // set joint value 
@@ -256,6 +256,10 @@ int main(int argc, char **argv)
             arm_joint_values[6] = angles::from_degrees(0.0);
 
             move_group_arm.setJointValueTarget(arm_joint_values);
+            move_group_arm.move();
+
+
+            move_group_arm.setNamedTarget("l_arm_init_pose");
             move_group_arm.move();
 
            
